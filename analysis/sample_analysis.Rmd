@@ -1,0 +1,31 @@
+---
+title: "Sample Analysis"
+author: "jschoenbachler"
+date: "2020-12-22"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
+```
+
+## Introduction
+
+ALL data files are located within the `data` folder. This should describe how to access the data and what you can do with it.
+
+## Load data
+
+Load data example here.
+
+```{r load libraries}
+library(data.table)
+library(ggplot2)
+```
+
+
+```{r laod all data}
+
+```
+
+
