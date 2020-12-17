@@ -25,7 +25,7 @@ library(ggplot2)
 
 
 ```{r load all data}
-songDT = fread('data/song_data')
+songDT = fread('data/song_data.csv')
 head(songDT, 5)
 ```
 
@@ -45,9 +45,9 @@ head(getLyricWordCount(songDT, c('merry', 'holidays')), 15)
 We can merge the tables and then figure out which words are the most "danceable" based on a column that comes from spotify.
 
 ```{r analyze dance words}
-songDT = merge(songDT, lyricDT, by = c('id.x', 'name'))
+songDT = merge(songDT, lyricDT, by = c('track_id', 'track_name'))
 songDT = songDT[, word_danceability := ((count / word_total) * danceability)]
 setorder(songDT, -word_danceability)
-cols = c('name', 'danceability', 'word_total', 'word', 'count', 'word_danceability')
-head(songDT[,..cols], 20)
+cols = c('track_name', 'danceability', 'word_total', 'word', 'count', 'word_danceability')
+head(songDT[, ..cols], 20)
 ```

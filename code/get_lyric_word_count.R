@@ -26,11 +26,11 @@ getLyricWordCount = function(songDT, wordExclude = NULL){
       wList = wList[which(!(wList %in% wordExclude))]
     }
 
-    data.table(name = songDT[idx,name], id.x = songDT[idx,id.x], word = wList, word_total = length(wList))
+    data.table(track_name = songDT[idx, track_name], track_id = songDT[idx, track_id], word = wList, word_total = length(wList))
 
   }
 
-  lyricDT[,count := .N, by=c('name', 'id.x', 'word')]
+  lyricDT[,count := .N, by=c('track_name', 'track_id', 'word')]
   lyricDT = unique(lyricDT)
   return(lyricDT)
 }

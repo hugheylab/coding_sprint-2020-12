@@ -515,16 +515,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree9db433b4a78bd1dbaa4245c991445db1b75497a2targetblank9db433ba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/9db433b4a78bd1dbaa4245c991445db1b75497a2" target="_blank">9db433b</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree5e7b7e5f2b0aa00bb794e5cd93eaf5da2c7f3bcetargetblank5e7b7e5a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/5e7b7e5f2b0aa00bb794e5cd93eaf5da2c7f3bce" target="_blank">5e7b7e5</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree9db433b4a78bd1dbaa4245c991445db1b75497a2targetblank9db433ba" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree5e7b7e5f2b0aa00bb794e5cd93eaf5da2c7f3bcetargetblank5e7b7e5a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/9db433b4a78bd1dbaa4245c991445db1b75497a2" target="_blank">9db433b</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/5e7b7e5f2b0aa00bb794e5cd93eaf5da2c7f3bce" target="_blank">5e7b7e5</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -534,8 +534,17 @@ Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
 
+Untracked files:
+    Untracked:  data/song_data.csv
+    Untracked:  data/song_data.csv.gz
+
 Unstaged changes:
+    Modified:   .DS_Store
     Modified:   analysis/sample_analysis.Rmd
+    Modified:   code/get_lyric_word_count.R
+    Modified:   data/.DS_Store
+    Deleted:    data/song_data
+    Deleted:    data/song_data.gz
 
 </code></pre>
 <p>
@@ -574,6 +583,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/hugheylab/coding_sprint-2020-12/blob/5e7b7e5f2b0aa00bb794e5cd93eaf5da2c7f3bce/analysis/sample_analysis.Rmd" target="_blank">5e7b7e5</a>
+</td>
+<td>
+Josh Schoenbachler
+</td>
+<td>
+2020-12-17
+</td>
+<td>
+Re-do analysis with only certain columns
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/hugheylab/coding_sprint-2020-12/5e7b7e5f2b0aa00bb794e5cd93eaf5da2c7f3bce/docs/sample_analysis.html" target="_blank">5e7b7e5</a>
+</td>
+<td>
+Josh Schoenbachler
+</td>
+<td>
+2020-12-17
+</td>
+<td>
+Re-do analysis with only certain columns
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -760,44 +803,44 @@ Add all files from old repo with basic strip down of files.
 <p>Load data example here.</p>
 <pre class="r"><code>library(data.table)
 library(ggplot2)</code></pre>
-<pre class="r"><code>songDT = fread(&#39;data/song_data&#39;)
+<pre class="r"><code>songDT = fread(&#39;data/song_data.csv&#39;)
 head(songDT, 5)</code></pre>
-<pre><code>                                               songArtist
-1:                 *NSYNC Merry Christmas, Happy Holidays
-2:                      Alessia Cara Make It To Christmas
-3:                         Andreas Weise Before Christmas
-4: Andy Williams It&#39;s the Most Wonderful Time of the Year
-5:                           Ariana Grande Last Christmas
-                     id.x                                     name popularity
-1: 5SyQ5OhqrkJGb35V7RBoL0          Merry Christmas, Happy Holidays          4
-2: 6RS6rcjnWrdfVuu2U2W2dj                     Make It To Christmas         56
-3: 5cXne3fQ8Q2vbSMwGjunM8                         Before Christmas         48
-4: 5hslUAKq9I9CG2bAulFkHN It&#39;s the Most Wonderful Time of the Year         69
-5: 5xDrO9DEDJGUQGfyoHvgDJ                           Last Christmas         61
-        artist_1 artist_2 artist_3 artist_4 danceability energy key loudness
-1:        *NSYNC                                   0.650  0.934   5   -4.209
-2:  Alessia Cara                                   0.522  0.522   2   -7.870
-3: Andreas Weise                                   0.475  0.364   7   -9.621
-4: Andy Williams                                   0.240  0.598   7   -8.435
-5: Ariana Grande                                   0.504  0.800   2   -2.763
-   mode speechiness acousticness instrumentalness liveness valence   tempo
-1:    1      0.0474        0.116                0    0.867   0.737 105.001
-2:    1      0.0383        0.130                0    0.438   0.305  77.072
-3:    1      0.0334        0.812                0    0.200   0.538 124.614
-4:    1      0.0369        0.766                0    0.117   0.776 201.629
-5:    1      0.0391        0.125                0    0.109   0.789 205.945
-   duration_ms time_signature
-1:      252200              4
-2:      211013              4
-3:      216468              3
-4:      151933              3
-5:      203653              4
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            lyrics
-1:                                                                                                                                                                                                     \n          \n            \n            [Intro: Justin, All]\nOooh\nMerry Christmas, Happy HolidaysMerry Christmas, Merry Christmas\nMerry Christmas, Happy Holidays\n[Verse 1: JC]\nHey yeah!\nWe&#39;ve been waiting all year for this night\nAnd the snow is glistening on the trees outside\nAnd all the stockings are hung by the fireside\nWaiting for Santa to arrive\n[Pre-Chorus: JC]\nAnd all the love will show &#39;cause everybody knows\nIt&#39;s Christmas time and all the kids will see\nThe gifts under the tree\nIt&#39;s the best time of year for the family\n[Chorus: All]\nIt&#39;s a wonderful feeling\nFeel the love in the room from the floor to the ceiling\nIt&#39;s that time of year\nChristmas time is here and with the blessings from above\nGod sends you his love and every thing&#39;s okay\nMerry Christmas, Happy Holidays\nMerry Christmas, Merry Christmas, Happy Holidays\n[Verse 2: Justin]\nOh ooh!\nBells are ringing, it&#39;s time to scream and shout\nAnd everybody&#39;s playing &#39;cause schools out\nCelebrating the special times we shared\nHappiness &#39;cause love is in the air\n[Pre-Chorus: Justin]\nAnd all the love will show &#39;cause everybody knows\nIt&#39;s Christmas time and all the kids will see\nThe gifts under the tree\nIt&#39;s the best time of year for the family\n[Chorus: All]\nIt&#39;s a wonderful feeling\nFeel the love in the room from the floor to the ceiling\nIt&#39;s that time of year\nChristmas time is here and with the blessings from above\nGod sends you his love and every thing&#39;s okay\nMerry Christmas, Happy Holidays\nMerry Christmas, Merry Christmas, Happy Holidays\n[Bridge: All, JC]\nMerry Christmas, Merry Christmas, Happy HolidaysNo matter what&#39;s your holiday, it&#39;s a time to celebratePut your worries aside and open up your mind\nSee the world right by your side, it&#39;s Christmas time\nMerry Christmas\nMerry Christmas\nMerry Christmas\nHappy Holidays\nMerry Christmas\nMerry Christmas\nMerry Christmas\nHappy Holidays\n[Chorus: All]\nIt&#39;s a wonderful feeling\nFeel the love in the room from the floor to the ceiling\nIt&#39;s that time of year\nChristmas time is here and with the blessings from above\nGod sends you his love and every thing&#39;s okay\nMerry Christmas, Happy Holidays\nMerry Christmas, Merry Christmas, Happy Holidays\nMerry Christmas, Merry Christmas\nMerry Christmas, Happy Holidays\nMerry Christmas, Merry Christmas\nMerry Christmas, Happy Holidays\n\n\n            \n          \n        
-2: \n          \n            \n            [Verse 1]\nWe were warm and wonderful\nOnce upon a time\nBut now we&#39;re frozen, hanging by a thread\nCan we wait a minute?\nOr can we just try to try?\n&#39;Cause my favorite day is coming up ahead\n[Pre-Chorus]\nDarling, I know that our love is going cold\nIt&#39;s just something &#39;bout the snow this time of year\nThat makes us lose our way, just say we&#39;ll make up\nAnd hold on a little longer\nDon&#39;t have me spending it alone\nThis time of year is precious\nPlease, can we make it to Christmas?\nCan we make it to Christmas?\n[Chorus]\n(Christmastime) Can we just make it to Christmas?\n(Everything will be alright) Can we just make it to Christmas?\n(If we just hold on) Can we just make it to Christmas?\n(Hold on, ho-o-old on) Make it to Christmas\n[Verse 2]\nDon&#39;t know what I&#39;ll say to Dad when he sees the empty chair\nDon&#39;t want to hear my mom say, &quot;&quot;Told you so&quot;&quot;\nWaiting for Santa in my bed is no fun if you&#39;re not there\nAnd I don&#39;t want to be angry at mistletoes\n[Pre-Chorus]\nDarling, I know that our love is going cold\nIt&#39;s just something &#39;bout the snow this time of year\nThat makes us lose our way, just say we&#39;ll make up\nAnd hold on a little longer\nDon&#39;t have me spending it alone\nThis time of year is precious\nPlease, can we make it to Christmas?\nCan we make it to Christmas?\n[Chorus]\n(Christmastime) Can we just make it to Christmas?\n(Everything will be alright) Can we just make it to Christmas?\n(If we just hold on) Can we just make it to Christmas?\n(Hold on, ho-o-old on) Make it to Christmas\n(Christmastime) Can we just make it to Christmas?\n(Everything will be alright) Can we just make it to Christmas?\n(If we just hold on) Can we just make it to Christmas?\n(Hold on, ho-o-old on) Make it to Christmas\n[Bridge]\nDarling, I know that our love is going cold\nIt&#39;s just something &#39;bout the snow this time of year\nThat makes us lose our way, just say we&#39;ll make up\nAnd hold on a little longer\nDon&#39;t have me spending it alone\nThis time of year is preciousBreak my heart on Boxing Day\nJust, please, can we make it to Christmas?\n[Chorus]\n(Christmastime) Can we just make it to Christmas?\n(Everything will be alright) Can we just make it to Christmas?\n(If we just hold on) Can we just make it to Christmas?\n(Hold on, ho-o-old on) Make it to Christmas (Yeah)\n(Christmastime) Can we just make it to Christmas?\n(Everything will be alright) Can we just make it to Christmas?\n(If we just hold on) Can we just make it to Christmas?\n(Hold on, ho-o-old on) Make it to Christmas\n\n\n            \n          \n        
-3:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              \n          \n            \n            Oh so long I&#39;ve been waiting\nFor the season to come\nWhen the snowflakes are falling\nAnd our family is one\nIt&#39;s that time before Christmas\nJust when the magic begins\nI see millions of candles\nLighting up every home\nSee the poor and the homeless they&#39;ll be all be alone\nIt&#39;s that time before Christmas\nJust when the goodness begins\nBefore Christmas I&#39;m falling in love\nBefore Christmas I&#39;m falling in love\nLike a child I am wishing\nMistletoе kissing\nAnd falling in love again\nAll the peoplе are longing\nFor good fortune they plea\nMaking a new years promise\nHow their future may be\nIt&#39;s that time before Christmas\nThat&#39;s when the magic begins\nBefore Christmas I&#39;m falling in love\nBefore Christmas I&#39;m falling in love\nLike a child I am wishing\nMistletoe kissing\nAnd falling in love again\nSo let&#39;s hope that this Christmas\nWill be more than just a dream\nIt&#39;s the moment that we&#39;ve all have been waiting for\nLet&#39;s appreciate togetherness\nSharing all happiness\nAnd keep our dreams alive\nForever more\nOh so long I&#39;ve been waiting\nFor the season to come\nNo matter what your religion\nWe all gather for fun\nIt&#39;s that time before Christmas\nJust when the magic begins\nBefore Christmas I&#39;m falling in love\nBefore Christmas I&#39;m falling in love\nLike a child I am wishing\nMistletoe kissing\nAnd falling in love again\nOh I&#39;m falling in love again\n(Mistletoe kissing)\nOh oh I&#39;m falling in love again\n\n\n            \n          \n        
-4:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \n          \n            \n            [Chorus]\nIt&#39;s the most wonderful time of the year\nWith the kids jingle belling\nAnd everyone telling you &quot;&quot;be of good cheer&quot;&quot;\nIt&#39;s the most wonderful time of the year\n[Verse 1]\nIt&#39;s the hap-happiest season of all\nWith those holiday greetings\nAnd gay happy meetings when friends come to call\nIt&#39;s the hap-happiest season of all\n[Pre-Chorus]\nThere&#39;ll be parties for hosting\nMarshmallows for toasting\nAnd caroling out in the snowThere&#39;ll be scary ghost stories\nAnd tales of the glories\nOf Christmases long, long ago\n[Chorus]\nIt&#39;s the most wonderful time of the year\nThere&#39;ll be much mistletoeing\nAnd hearts will be glowing when loved ones are near\nIt&#39;s the most wonderful time of the year\n[Pre-Chorus]\nThere&#39;ll be parties for hosting\nMarshmallows for toasting\nAnd caroling out in the snow\nThere&#39;ll be scary ghost stories\nAnd tales of the glories\nOf Christmases long, long ago\n[Chorus]\nIt&#39;s the most wonderful time of the year\nThere&#39;ll be much mistletoeing\nAnd hearts will be glowing when loved ones are near\nIt&#39;s the most wonderful time\nIt&#39;s the most wonderful time\nIt&#39;s the most wonderful time\nIt&#39;s the most wonderful time of the year\n\n\n            \n          \n        
-5:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     \n          \n            \n            [Verse 1]\nI hate that I remember\nI wish I could forget what you did last December\nYou left my heart a mess\nBoy, you blew it\nHow could you do it, do it?\nOh, yeah\n[Chorus]Last Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\nLast Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\n[Verse 2]\nThought we belong together\nAt least that&#39;s what you said\nI should have known better\nYou broke my heart again\nBoy, you blew it\nHow could you do it, do it?\nOh, yeah\n[Chorus]Last Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\nLast Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\n[Bridge]\nHow could you leave Christmas morning?\nYou broke my heart with no warning\nBoy, you blew it\nHow could you do it, do it?\nOh, yeah\n[Chorus]Last Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\nLast Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\n[Outro]\nThis is our last, last Christmas\nYou broke my heart\nLast, last Christmas\nYou broke my heart\nThis year to save me from tears, I&#39;ll give it to someone special\nI hate that I remember\nI wish I could forget what you did last December\nYou left my heart a mess\nYou blew it\nYou do it, do it?\n\n\n            \n          \n        </code></pre>
+<pre><code>                 track_id                               track_name popularity
+1: 5SyQ5OhqrkJGb35V7RBoL0          Merry Christmas, Happy Holidays          9
+2: 110lWlsa8fJXgrrwGgg0f1                Blame It On The Mistletoe         67
+3: 5hslUAKq9I9CG2bAulFkHN It&#39;s the Most Wonderful Time of the Year         92
+4: 5xDrO9DEDJGUQGfyoHvgDJ                           Last Christmas         81
+5: 6YJdPrH3i2POzu7hdHIRrb                               Santa Baby         83
+        artist_1       artist_2 artist_3 artist_4
+1:        *NSYNC                                 
+2:   AJ Mitchell Ella Henderson                  
+3: Andy Williams                                 
+4: Ariana Grande                                 
+5: Ariana Grande    Liz Gillies                  
+                                                                                                                                  genre
+1:                                                                                                       boy band|dance pop|europop|pop
+2: electropop|indie cafe pop|pop|post-teen pop|social media pop|dance pop|pop|pop dance|post-teen pop|talent show|tropical house|uk pop
+3:                                                                                           adult standards|easy listening|mellow gold
+4:                                                                                                                    pop|post-teen pop
+5:                                                                                                                    pop|post-teen pop
+   danceability energy key loudness mode speechiness acousticness
+1:        0.650  0.934   5   -4.209    1      0.0474       0.1160
+2:        0.680  0.593   5   -5.036    0      0.0281       0.0198
+3:        0.240  0.598   7   -8.435    1      0.0369       0.7660
+4:        0.504  0.800   2   -2.763    1      0.0391       0.1250
+5:        0.748  0.778   0   -5.752    1      0.1370       0.0501
+   instrumentalness liveness valence   tempo duration_ms time_signature
+1:                0    0.867   0.737 105.001      252200              4
+2:                0    0.145   0.482 114.917      185739              4
+3:                0    0.117   0.776 201.629      151933              3
+4:                0    0.109   0.789 205.945      203653              4
+5:                0    0.284   0.777  95.989      170933              4
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              lyrics
+1: \n          \n            \n            [Intro: Justin, All &amp; JC]\nOooh-ooh\nMerry Christmas\nHappy holidaysMerry Christmas (oh yeah, hey)Merry Christmas (Merry Christmas)Merry Christmas\nHappy holidays (ooh-yeah!)\n[Verse 1: JC]\nWe&#39;ve been waiting\nAll year for this night\nAnd the snow is glistening\nOn the trees outside\nAnd all the stockings\nAre hung by the fireside\nWaiting for Santa to arrive\n[Pre-Chorus: JC]\nAnd all the love will show\n&#39;Cause everybody knows\nIt&#39;s Christmas time\nAnd all the kids will see\nThe gifts under the tree\nIt&#39;s the best time of year\nFor the family\n[Chorus: All &amp; JC]\nIt&#39;s a wonderful feeling (hey yeah)\nFeel the love in the room\nFrom the floor to the ceiling\nIt&#39;s that time of year\nChristmas time is here\nAnd with the blessings from above\nGod sends you his love\nAnd everything&#39;s okay\nMerry Christmas, happy holidays (oh yeah)\nMerry Christmas (oh-oh-oh)\nMerry Christmas\nHappy holidays (ooh-yeah)\n[Verse 2: Justin &amp; All]\nOh-oh!\nBells are ringing\nIt&#39;s time to scream and shout(Scream and shout!)\nAnd everybody playing\n&#39;Cause school&#39;s out\nCelebrating the special times we share\nHappiness &#39;cause love is in the air\n[Pre-Chorus: Justin]\nAnd all the love will show\n&#39;Cause everybody knows\nIt&#39;s Christmas time\nAnd all the kids will see\nThe gifts under the tree\nIt&#39;s the best time of year\nFor the family\n[Chorus: All &amp; Justin]\nIt&#39;s a wonderful feeling (wonderful feeling)\nFeel the love in the room\nFrom the floor to the ceiling (oh yeah, hey)\nIt&#39;s that time of year (that time of year)\nChristmas time is here (oh yeah)\nAnd with the blessings from above\nGod sends you his love\nAnd everything&#39;s okay\nMerry Christmas, happy holidays\nMerry Christmas (Merry Christmas)\nMerry Christmas\nHappy holidays (ooh-ooh)\nMerry Christmas (oh yeah)\nMerry Christmas\nHappy holidays\n[Bridge: JC &amp; All]\nNo matter what your holiday\nIt&#39;s a time to celebrate\nAnd put your worries aside(Worries aside)\nAnd open up your mind(Open up your mind)\nSee the world right by your side\nIt&#39;s Christmas time!\n[Interlude: All, Justin &amp; JC]\nMerry Christmas\nMerry Christmas (Merry Christmas)\nHappy holidays(Sing it, everybody!)\nMerry Christmas (come on, now!)\nMerry Christmas (let me hear ya)\nMerry Christmas\nHappy holidays\n[Chorus: All, JC &amp; Justin]\nIt&#39;s a wonderful feeling\nFeel the love in the room\nFrom the floor to the ceiling (oh yeah)\nIt&#39;s that time of year (that time of year)\nChristmas time is here (ooh-yeah)\nAnd with the blessings from above (oh-oh-oh)\nGod sends you his love (oh yeah)\nAnd everything&#39;s okay (yeah, yeah, hey!)\nMerry Christmas, happy holidays(Come on, now!)\nMerry Christmas(Let me hear ya)\nMerry Christmas\nHappy holidays\nMerry Christmas(Merry Christmas)\nMerry Christmas(Oh yeah, yeah)\nMerry Christmas(Yeah, yeah)\nHappy holidays\nMerry Christmas\nMerry Christmas\nHappy holidays\n\n\n            \n          \n        
+2:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \n          \n            \n            [Verse 1: Ella Henderson]\nSo glad you showed up to this party\n&#39;Cause I was &#39;bout to leave for sure\nAin&#39;t no fun dancin&#39; with nobody\nWhen it&#39;s December 24th\n[Pre-Chorus: Ella Henderson]\nYou gave me a drink and\nNow it&#39;s got me thinkin&#39;\nSomething&#39;s in the air tonight\n[Chorus: Ella Henderson &amp; AJ Mitchell]\nOh, you melt me when you get this close\nLike the snowflakes on your winter coat\nBaby, kiss me, or we&#39;ll never know\nWe can blame it on the mistletoe\nIt&#39;s gettin&#39; late but we don&#39;t wanna go\nAnd Mariah&#39;s on the radio\nSo baby, kiss me, or we&#39;ll never know\nWe can blame it on thе mistletoe\n[Verse 2: AJ Mitchell]\nNow I know what I want for Christmas\nJust a moment on your lips, yеah, ayy (Hmm, hmm)\nSo Santa if you&#39;re really listenin&#39;\nI wanna add a present to my list\n[Pre-Chorus: AJ Mitchell]\nChristmas stars are twinklin&#39;, oh, it&#39;s got me thinkin&#39;\nSomething&#39;s in the air tonight\n[Chorus: Ella Henderson &amp; AJ Mitchell]\nOh, you melt me when you get this close\nLike the snowflakes on your winter coat\nBaby, kiss me, or we&#39;ll never know\nWe can blame it on the mistletoe\nIt&#39;s gettin&#39; late but we don&#39;t wanna go\nAnd Mariah&#39;s on the radio (Radio)\nSo baby, kiss me, or we&#39;ll never know\nWe can blame it on the mistletoe\n[Bridge: AJ Mitchell &amp; Ella Henderson]\nAll the blessings come right out of the blueYou&#39;re the best thing to turn up, baby, it&#39;s you, ooh, ooh, ooh\n[Chorus: Ella Henderson &amp; AJ Mitchell, AJ Mitchell]\nOh, you melt me when you get this close (This close)\nLike the snowflakes on your winter coat (On your winter coat, woah-oh, woah-oh)\nBaby, kiss me, or we&#39;ll never know (Never know)\nWe can blame it on the mistletoe (Blame it on the mistletoe)\nIt&#39;s gettin&#39; late but we don&#39;t wanna go (Don&#39;t wanna go)\nAnd Mariah&#39;s on the radio (Ooh, ooh-ooh)\nSo baby, kiss me, or we&#39;ll never know\nWe can blame it on the mistletoe (The mistletoe)\n[Outro: Ella Henderson &amp; AJ Mitchell]\nSo baby, kiss me, or we&#39;ll never knowWe can blame it on the mistletoe\n\n\n            \n          \n        
+3:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \n          \n            \n            [Chorus]\nIt&#39;s the most wonderful time of the year\nWith the kids jingle belling\nAnd everyone telling you &quot;&quot;be of good cheer&quot;&quot;\nIt&#39;s the most wonderful time of the year\n[Verse 1]\nIt&#39;s the hap-happiest season of all\nWith those holiday greetings\nAnd gay happy meetings when friends come to call\nIt&#39;s the hap-happiest season of all\n[Pre-Chorus]\nThere&#39;ll be parties for hosting\nMarshmallows for toasting\nAnd caroling out in the snowThere&#39;ll be scary ghost stories\nAnd tales of the glories\nOf Christmases long, long ago\n[Chorus]\nIt&#39;s the most wonderful time of the year\nThere&#39;ll be much mistletoeing\nAnd hearts will be glowing when loved ones are near\nIt&#39;s the most wonderful time of the year\n[Pre-Chorus]\nThere&#39;ll be parties for hosting\nMarshmallows for toasting\nAnd caroling out in the snow\nThere&#39;ll be scary ghost stories\nAnd tales of the glories\nOf Christmases long, long ago\n[Chorus]\nIt&#39;s the most wonderful time of the year\nThere&#39;ll be much mistletoeing\nAnd hearts will be glowing when loved ones are near\nIt&#39;s the most wonderful time\nIt&#39;s the most wonderful time\nIt&#39;s the most wonderful time\nIt&#39;s the most wonderful time of the year\n\n\n            \n          \n        
+4:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \n          \n            \n            [Verse 1]\nI hate that I remember\nI wish I could forget what you did last December\nYou left my heart a mess\nBoy, you blew it\nHow could you do it, do it?\nOh, yeah (It&#39;s The Rascals!)\n[Chorus]Last Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\nLast Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\n[Verse 2]\nThought we belong together\nAt least that&#39;s what you said\nI should have known better\nYou broke my heart again\nBoy, you blew it\nHow could you do it, do it?\nOh, yeah\n[Chorus]Last Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\nLast Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\n[Bridge]\nHow could you leave Christmas morning?\nYou broke my heart with no warning\nBoy, you blew it\nHow could you do it, do it?\nOh, yeah\n[Chorus]Last Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\nLast Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\n[Outro]\nThis is our last, last Christmas\nYou broke my heart\nLast, last Christmas\nYou broke my heart\nThis year to save me from tears, I&#39;ll give it to someone special\nI hate that I remember\nI wish I could forget what you did last December\nYou left my heart a mess\nYou blew it\nYou do it, do it?\n\n\n            \n          \n        
+5:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \n          \n            \n            [Verse 1: Ariana Grande]\nSanta baby, slip a Sable under the tree for me (mmhmm)\nI&#39;ve been an awful good girl\nSanta baby, so hurry down the chimney tonight\n[Verse 2: Liz Gillies]\nSanta baby, a &#39;54 convertible too, light blue\nI&#39;ll wait up for you dear\nSanta baby, and hurry down the chimney tonight\n[Chorus: Ariana Grande + Liz Gillies]\nThink of all the fun I&#39;ve missed\nThink of all the fellas that I haven&#39;t kissed *kiss*Next year I could be just as good\nIf you check off my Christmas list\n[Verse 3: Ariana Grande + Liz Gillies]\nSanta baby, I want a yacht and really that&#39;s not a lie\nI&#39;ve been an angel all year\nSanta baby, so hurry down the chimney tonight\n[Verse 4: Ariana Grande]\nSanta honey, the one little thing I really need\nThe deed to a platinum mine\nSanta honey, so hurry down the chimney tonight\n[Chorus: Liz Gillies + Ariana Grande]\nCome and trim my Christmas tree\nWith some decorations bought at Tiffany&#39;sI really do believe in you\nLet&#39;s see if you believe in me\n[Bridge: Ariana Grande + Liz Gillies]\nSanta baby, forgot to mention one little thing, a ring\nAnd I don&#39;t mean on the phoneSanta baby, and hurry down the chimney tonight\nSo hurry down the chimney tonight\n[Outro: Ariana Grande + Liz Gillies]\nWaitingHurry, tonight\nHurry down the chimney tonight\n\n\n            \n          \n        </code></pre>
 </div>
 <div id="use-word-count-function" class="section level2">
 <h2>Use word count function</h2>
@@ -805,15 +848,48 @@ head(songDT, 5)</code></pre>
 <pre class="r"><code>source(&#39;code/get_lyric_word_count.R&#39;)
 lyricDT = getLyricWordCount(songDT)
 head(lyricDT, 15)</code></pre>
-<pre><code>                               name                   id.x          word
+<pre><code>                         track_name               track_id          word
  1: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          oooh
- 2: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0         merry
+ 2: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           ooh
+ 3: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0         merry
+ 4: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0     christmas
+ 5: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0         happy
+ 6: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0 holidaysmerry
+ 7: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0            oh
+ 8: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          yeah
+ 9: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           hey
+10: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0      holidays
+11: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          weve
+12: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          been
+13: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0       waiting
+14: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           all
+15: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          year
+    word_total count
+ 1:        433     1
+ 2:        433     6
+ 3:        433    28
+ 4:        433    35
+ 5:        433    13
+ 6:        433     1
+ 7:        433    16
+ 8:        433    17
+ 9:        433     4
+10:        433    12
+11:        433     1
+12:        433     1
+13:        433     2
+14:        433     6
+15:        433     8</code></pre>
+<pre class="r"><code>head(getLyricWordCount(songDT, c(&#39;merry&#39;, &#39;holidays&#39;)), 15)</code></pre>
+<pre><code>                         track_name               track_id          word
+ 1: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          oooh
+ 2: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           ooh
  3: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0     christmas
  4: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0         happy
  5: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0 holidaysmerry
- 6: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0      holidays
- 7: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           hey
- 8: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          yeah
+ 6: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0            oh
+ 7: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          yeah
+ 8: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           hey
  9: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          weve
 10: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          been
 11: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0       waiting
@@ -822,105 +898,72 @@ head(lyricDT, 15)</code></pre>
 14: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           for
 15: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          this
     word_total count
- 1:        354     1
- 2:        354    26
- 3:        354    33
- 4:        354    13
- 5:        354     1
- 6:        354    11
- 7:        354     1
- 8:        354     1
- 9:        354     1
-10:        354     1
-11:        354     2
-12:        354     6
-13:        354     6
-14:        354     4
-15:        354     1</code></pre>
-<pre class="r"><code>head(getLyricWordCount(songDT, c(&#39;merry&#39;, &#39;holidays&#39;)), 15)</code></pre>
-<pre><code>                               name                   id.x          word
- 1: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          oooh
- 2: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0     christmas
- 3: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0         happy
- 4: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0 holidaysmerry
- 5: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           hey
- 6: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          yeah
- 7: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          weve
- 8: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          been
- 9: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0       waiting
-10: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           all
-11: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          year
-12: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           for
-13: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          this
-14: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0         night
-15: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           and
-    word_total count
- 1:        317     1
- 2:        317    33
- 3:        317    13
- 4:        317     1
- 5:        317     1
- 6:        317     1
- 7:        317     1
- 8:        317     1
- 9:        317     2
-10:        317     6
-11:        317     6
-12:        317     4
-13:        317     1
-14:        317     1
-15:        317    15</code></pre>
+ 1:        393     1
+ 2:        393     6
+ 3:        393    35
+ 4:        393    13
+ 5:        393     1
+ 6:        393    16
+ 7:        393    17
+ 8:        393     4
+ 9:        393     1
+10:        393     1
+11:        393     2
+12:        393     6
+13:        393     8
+14:        393     4
+15:        393     1</code></pre>
 </div>
 <div id="sample-analyses-of-danceable-words" class="section level2">
 <h2>Sample analyses of danceable words</h2>
 <p>We can merge the tables and then figure out which words are the most “danceable” based on a column that comes from spotify.</p>
-<pre class="r"><code>songDT = merge(songDT, lyricDT, by = c(&#39;id.x&#39;, &#39;name&#39;))
+<pre class="r"><code>songDT = merge(songDT, lyricDT, by = c(&#39;track_id&#39;, &#39;track_name&#39;))
 songDT = songDT[, word_danceability := ((count / word_total) * danceability)]
 setorder(songDT, -word_danceability)
-cols = c(&#39;name&#39;, &#39;danceability&#39;, &#39;word_total&#39;, &#39;word&#39;, &#39;count&#39;, &#39;word_danceability&#39;)
-head(songDT[,..cols], 20)</code></pre>
-<pre><code>                                                     name danceability
- 1:                                      Jingle Bell Rock        0.706
- 2:                                 Santa&#39;s Coming for Us        0.669
- 3:                                 Santa&#39;s Coming for Us        0.669
- 4:                                        Blue Christmas        0.465
- 5:                                      Jingle Bell Rock        0.709
- 6:                                           Sleigh Ride        0.529
- 7:                                      Jingle Bell Rock        0.706
- 8:              A Holly Jolly Christmas - Single Version        0.672
- 9:                                      Joy To The World        0.581
-10:                                           Sleigh Ride        0.529
-11:                                 Santa&#39;s Coming for Us        0.669
-12:                     Christmas (Baby Please Come Home)        0.561
-13:                                      Man With The Bag        0.622
-14:                                 Cozy Little Christmas        0.774
-15:                                      Jingle Bell Rock        0.709
-16:                              Thank God It&#39;s Christmas        0.573
-17:                                        This Christmas        0.575
-18: Wonderful Christmastime (Edited Version) [Remastered]        0.774
-19:                                             Mistletoe        0.666
-20:                                        Christmas Time        0.574
+cols = c(&#39;track_name&#39;, &#39;danceability&#39;, &#39;word_total&#39;, &#39;word&#39;, &#39;count&#39;, &#39;word_danceability&#39;)
+head(songDT[, ..cols], 20)</code></pre>
+<pre><code>                                               track_name danceability
+ 1:                                    Little Drummer Boy        0.564
+ 2:                                      Jingle Bell Rock        0.706
+ 3:                                      Jingle Bell Rock        0.709
+ 4:                                           Sleigh Ride        0.529
+ 5:                                      Jingle Bell Rock        0.706
+ 6:              A Holly Jolly Christmas - Single Version        0.672
+ 7:                                           Sleigh Ride        0.529
+ 8:                   Holidays (feat. Earth, Wind &amp; Fire)        0.700
+ 9:                     Christmas (Baby Please Come Home)        0.561
+10:                                 Cozy Little Christmas        0.774
+11:                                      Jingle Bell Rock        0.709
+12: Wonderful Christmastime (Edited Version) [Remastered]        0.774
+13:                                             Mistletoe        0.666
+14:                                    Little Drummer Boy        0.564
+15: Wonderful Christmastime (Edited Version) [Remastered]        0.774
+16: Wonderful Christmastime (Edited Version) [Remastered]        0.774
+17:                         Santa Claus Is Coming to Town        0.594
+18:                                        One More Sleep        0.638
+19: Wonderful Christmastime (Edited Version) [Remastered]        0.774
+20: Wonderful Christmastime (Edited Version) [Remastered]        0.774
     word_total      word count word_danceability
- 1:        205    jingle    35        0.12053659
- 2:        436        do    72        0.11047706
- 3:        436        da    72        0.11047706
- 4:        119       ooh    25        0.09768908
- 5:        189    jingle    26        0.09753439
- 6:        309         a    56        0.09587055
- 7:        205      bell    27        0.09298537
- 8:        200      ding    26        0.08736000
- 9:        104       and    15        0.08379808
-10:        309      ding    48        0.08217476
-11:        436        oh    50        0.07672018
-12:        193 christmas    26        0.07557513
-13:        241       the    29        0.07484647
-14:        364        la    34        0.07229670
-15:        189      bell    19        0.07127513
-16:        177 christmas    22        0.07122034
-17:        264      yeah    31        0.06751894
-18:        224      time    19        0.06565179
-19:        329       the    32        0.06477812
-20:        349      time    39        0.06414327</code></pre>
+ 1:        183       pum    63        0.19416393
+ 2:        205    jingle    35        0.12053659
+ 3:        189    jingle    26        0.09753439
+ 4:        309         a    56        0.09587055
+ 5:        205      bell    27        0.09298537
+ 6:        200      ding    26        0.08736000
+ 7:        309      ding    48        0.08217476
+ 8:        294   holiday    34        0.08095238
+ 9:        193 christmas    26        0.07557513
+10:        364        la    34        0.07229670
+11:        189      bell    19        0.07127513
+12:        224      time    19        0.06565179
+13:        329       the    32        0.06477812
+14:        183       rum    21        0.06472131
+15:        224         a    18        0.06219643
+16:        224 christmas    18        0.06219643
+17:        177       you    18        0.06040678
+18:        387      more    36        0.05934884
+19:        224    simply    17        0.05874107
+20:        224    having    17        0.05874107</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
