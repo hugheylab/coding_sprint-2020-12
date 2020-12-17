@@ -1,6 +1,6 @@
 ---
 title: "Sample Analysis"
-author: "jschoenbachler"
+author: "jschoenbachler & eoutland"
 date: "2020-12-22"
 output: workflowr::wflow_html
 editor_options:
