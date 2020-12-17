@@ -515,27 +515,27 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree4e34be2a9e789169db1d712cf4bad3bbecf3093dtargetblank4e34be2a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/4e34be2a9e789169db1d712cf4bad3bbecf3093d" target="_blank">4e34be2</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree26340b3ae752f65a9ab01730ed6c1183853ae26ftargetblank26340b3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/26340b3ae752f65a9ab01730ed6c1183853ae26f" target="_blank">26340b3</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree4e34be2a9e789169db1d712cf4bad3bbecf3093dtargetblank4e34be2a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree26340b3ae752f65a9ab01730ed6c1183853ae26ftargetblank26340b3a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/4e34be2a9e789169db1d712cf4bad3bbecf3093d" target="_blank">4e34be2</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/26340b3ae752f65a9ab01730ed6c1183853ae26f" target="_blank">26340b3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
 Ignored files:
+    Ignored:    .Rhistory
     Ignored:    .Rproj.user/
 
 Unstaged changes:
     Modified:   analysis/sample_analysis.Rmd
-    Modified:   code/get_lyric_word_count.R
 
 </code></pre>
 <p>
@@ -574,6 +574,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/hugheylab/coding_sprint-2020-12/blob/26340b3ae752f65a9ab01730ed6c1183853ae26f/analysis/sample_analysis.Rmd" target="_blank">26340b3</a>
+</td>
+<td>
+Josh Schoenbachler
+</td>
+<td>
+2020-12-17
+</td>
+<td>
+Add more to sample analysis
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/hugheylab/coding_sprint-2020-12/26340b3ae752f65a9ab01730ed6c1183853ae26f/docs/sample_analysis.html" target="_blank">26340b3</a>
+</td>
+<td>
+Josh Schoenbachler
+</td>
+<td>
+2020-12-17
+</td>
+<td>
+Add more to sample analysis
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -808,175 +842,127 @@ head(lyricDT, 15)</code></pre>
 <p>We can merge the tables and then figure out which words are the most “danceable” based on a column that comes from spotify.</p>
 <pre class="r"><code>songDT = merge(songDT, lyricDT, by = c(&#39;id.x&#39;, &#39;name&#39;))
 songDT = songDT[, word_danceability := ((count / word_total) * danceability)]
-head(setorder(songDT, -word_danceability), 20)</code></pre>
-<pre><code>                      id.x
- 1: 0JoLc8rgQBJhDMolSCuRuw
- 2: 3AlpkljBS1AU7HFVPms8K6
- 3: 3AlpkljBS1AU7HFVPms8K6
- 4: 3QiAAp20rPC3dcAtKtMaqQ
- 5: 2wCPMWR3y4xclijuCcLJv7
- 6: 5ASM6Qjiav2xPe7gRkQMsQ
- 7: 0JoLc8rgQBJhDMolSCuRuw
- 8: 6XzpeMXDvLC86GvAfnUsIA
- 9: 5jjsm4Jjq8xjDaue3rW9Go
-10: 5ASM6Qjiav2xPe7gRkQMsQ
-11: 3AlpkljBS1AU7HFVPms8K6
-12: 3PIDciSFdrQxSQSihim3hN
-13: 18g50kFt5uwVeCzQbrCvAO
-14: 02FaKXXL7KUtRc7K0k54tL
-15: 2wCPMWR3y4xclijuCcLJv7
-16: 0QtJZpyfZF67QF32p41NXa
-17: 32h59T8q2SonUPJ006lyXt
-18: 1F8tXdM8cz9bH5PiK1SuAB
-19: 32OWobmyAz8J2qA8iWekyS
-20: 1eh5mDCjo7XbDNY5tYiNVU
-                                                     name
- 1:                                      Jingle Bell Rock
- 2:                                 Santa&#39;s Coming for Us
- 3:                                 Santa&#39;s Coming for Us
- 4:                                        Blue Christmas
- 5:                                      Jingle Bell Rock
- 6:                                           Sleigh Ride
- 7:                                      Jingle Bell Rock
- 8:              A Holly Jolly Christmas - Single Version
- 9:                                      Joy To The World
-10:                                           Sleigh Ride
-11:                                 Santa&#39;s Coming for Us
-12:                     Christmas (Baby Please Come Home)
-13:                                      Man With The Bag
-14:                                 Cozy Little Christmas
-15:                                      Jingle Bell Rock
-16:                              Thank God It&#39;s Christmas
-17:                                        This Christmas
-18: Wonderful Christmastime (Edited Version) [Remastered]
-19:                                             Mistletoe
-20:                                        Christmas Time
-                                  songArtist popularity                artist_1
- 1: Daryl Hall &amp; John Oates Jingle Bell Rock          0 Daryl Hall &amp; John Oates
- 2:                Sia Santa&#39;s Coming for Us         51                     Sia
- 3:                Sia Santa&#39;s Coming for Us         51                     Sia
- 4:             Elvis Presley Blue Christmas         60           Elvis Presley
- 5:             Bobby Helms Jingle Bell Rock          0             Bobby Helms
- 6:                 The Ronettes Sleigh Ride         65            The Ronettes
- 7: Daryl Hall &amp; John Oates Jingle Bell Rock          0 Daryl Hall &amp; John Oates
- 8:        Burl Ives A Holly Jolly Christmas         56               Burl Ives
- 9:           Nat King Cole Joy To The World          0           Nat King Cole
-10:                 The Ronettes Sleigh Ride         65            The Ronettes
-11:                Sia Santa&#39;s Coming for Us         51                     Sia
-12:                   Mariah Carey Christmas         63            Mariah Carey
-13:                Jessie J Man With The Bag          0                Jessie J
-14:         Katy Perry Cozy Little Christmas         56              Katy Perry
-15:             Bobby Helms Jingle Bell Rock          0             Bobby Helms
-16:           Queen Thank God It&#39;s Christmas         50                   Queen
-17:        Christina Aguilera This Christmas         52      Christina Aguilera
-18:   Paul McCartney Wonderful Christmastime          0          Paul McCartney
-19:                  Justin Bieber Mistletoe          0           Justin Bieber
-20:           Backstreet Boys Christmas Time          0         Backstreet Boys
-    artist_2 artist_3 artist_4 danceability energy key loudness mode
- 1:                                   0.706  0.633   2   -9.715    1
- 2:                                   0.669  0.854   1   -4.486    1
- 3:                                   0.669  0.854   1   -4.486    1
- 4:                                   0.465  0.270   4  -16.661    1
- 5:                                   0.709  0.506   2   -5.628    1
- 6:                                   0.529  0.772   2   -7.013    1
- 7:                                   0.706  0.633   2   -9.715    1
- 8:                                   0.672  0.369   0  -13.081    1
- 9:                                   0.581  0.312  11  -12.938    1
-10:                                   0.529  0.772   2   -7.013    1
-11:                                   0.669  0.854   1   -4.486    1
-12:                                   0.561  0.782   3   -7.444    1
-13:                                   0.622  0.688   4   -3.504    0
-14:                                   0.774  0.608   7   -6.264    1
-15:                                   0.709  0.506   2   -5.628    1
-16:                                   0.573  0.475   7   -8.110    1
-17:                                   0.575  0.744   1   -5.466    1
-18:                                   0.774  0.508  11   -9.115    1
-19:                                   0.666  0.543   6   -9.188    0
-20:                                   0.574  0.519   7  -10.771    1
-    speechiness acousticness instrumentalness liveness valence   tempo
- 1:      0.0303       0.6740         0.00e+00   0.1550   0.823 128.880
- 2:      0.0999       0.0205         0.00e+00   0.0470   0.707  93.057
- 3:      0.0999       0.0205         0.00e+00   0.0470   0.707  93.057
- 4:      0.0425       0.9000         1.04e-03   0.1450   0.580  94.518
- 5:      0.0377       0.8440         0.00e+00   0.0620   0.682 119.345
- 6:      0.0287       0.4030         2.21e-06   0.3160   0.853  91.751
- 7:      0.0303       0.6740         0.00e+00   0.1550   0.823 128.880
- 8:      0.0301       0.5890         0.00e+00   0.0957   0.863 140.490
- 9:      0.0329       0.8960         0.00e+00   0.1660   0.536 102.107
-10:      0.0287       0.4030         2.21e-06   0.3160   0.853  91.751
-11:      0.0999       0.0205         0.00e+00   0.0470   0.707  93.057
-12:      0.0317       0.0220         0.00e+00   0.1090   0.704 127.148
-13:      0.0845       0.5200         0.00e+00   0.3750   0.766 140.561
-14:      0.1280       0.1280         0.00e+00   0.0895   0.560 137.494
-15:      0.0377       0.8440         0.00e+00   0.0620   0.682 119.345
-16:      0.0258       0.0720         0.00e+00   0.3580   0.324 107.759
-17:      0.0603       0.0687         0.00e+00   0.0723   0.701 183.790
-18:      0.0335       0.2880         0.00e+00   0.0690   0.773  94.720
-19:      0.0446       0.5110         0.00e+00   0.0911   0.881 161.947
-20:      0.0252       0.1630         0.00e+00   0.0407   0.414 144.012
-    duration_ms time_signature
- 1:      123640              4
- 2:      206533              4
- 3:      206533              4
- 4:      129173              4
- 5:      131547              4
- 6:      181267              4
- 7:      123640              4
- 8:      133093              4
- 9:       85227              4
-10:      181267              4
-11:      206533              4
-12:      153240              4
-13:      161973              4
-14:      182521              4
-15:      131547              4
-16:      259227              3
-17:      241507              4
-18:      225840              4
-19:      182947              4
-20:      255173              4
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  lyrics
- 1:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           jingle bell jingle bell jingle bell rock jingle bells swing and jingle bells ring snowin and blowin up bushels of fun now the jingle hop has begun jingle bell jingle bell jingle bell rock jingle bells chime in jingle bell time dancin and prancin in jingle bell square in the frosty air what a bright time its the right time to rock the night away jingle bell time is a swell time to go glidin in a one horse sleigh giddy up jingle horse pick up your feet jingle around the clock mix and a mingle in the jinglin feet thats the jingle bell rock jingle bell jingle bell jingle bell rock jingle bell jingle bell jingle bell rock jingle bell jingle bell jingle bell rock jingle bell jingle bell jingle bell rock dancin and prancin in jingle bell square in the frosty air what a bright time its the right time to rock the night away jingle bell time is a swell time to go glidin in a one horse sleigh giddy up jingle horse pick up your feet jingle around the clock mix and a mingle in the jinglin feet thats the jingle bell thats the jingle bell thats the jingle bell rock
- 2:                                                                nights are getting shorter now hot chocolate fills the air and christmas cheer does too picking out your christmas tree so lovely the joy this time it brings to you oh do do do oh do do do oh do do do oh do do do oh do do do oh do do do santas coming to town oh da da da oh da da da oh da da da oh da da da oh da da da oh da da da santas coming to town sing it to the deer in the sky sing it as they jingle jingle jingle tonight sing it to the moon set it free youre the angel on the top of my tree sing it to the spirit above sing your heart out with all of your love santas coming for us santas coming for us santas coming for us santas coming for us santas coming for us santas coming for us oh santas coming for us send your letters off to santa baby tell him all your secret wishes too send your letters off to santa baby hoping all your wildest dreams come true oh do do do oh do do do oh do do do oh do do do oh do do do oh do do do santas coming to town oh da da da oh da da da oh da da da oh da da da oh da da da oh da da da santas coming to town sing it to the deer in the sky sing it as they jingle jingle jingle tonight sing it to the moon set it free youre the angel on the top of my tree sing it to the spirit above sing your heart out with all of your love santas coming for us santas coming for us santas coming for us santas coming for us santas coming for us santas coming for us oh santas coming for us oh do do do oh do do do oh do do do oh do do do oh do do do oh do do do santas coming to town oh da da da oh da da da oh da da da oh da da da oh da da da oh da da da santas coming to town oh do do do oh do do do oh do do do oh do do do oh do do do oh do do do santas coming to town oh da da da oh da da da oh da da da oh da da da oh da da da oh da da da santas coming to town
- 3:                                                                nights are getting shorter now hot chocolate fills the air and christmas cheer does too picking out your christmas tree so lovely the joy this time it brings to you oh do do do oh do do do oh do do do oh do do do oh do do do oh do do do santas coming to town oh da da da oh da da da oh da da da oh da da da oh da da da oh da da da santas coming to town sing it to the deer in the sky sing it as they jingle jingle jingle tonight sing it to the moon set it free youre the angel on the top of my tree sing it to the spirit above sing your heart out with all of your love santas coming for us santas coming for us santas coming for us santas coming for us santas coming for us santas coming for us oh santas coming for us send your letters off to santa baby tell him all your secret wishes too send your letters off to santa baby hoping all your wildest dreams come true oh do do do oh do do do oh do do do oh do do do oh do do do oh do do do santas coming to town oh da da da oh da da da oh da da da oh da da da oh da da da oh da da da santas coming to town sing it to the deer in the sky sing it as they jingle jingle jingle tonight sing it to the moon set it free youre the angel on the top of my tree sing it to the spirit above sing your heart out with all of your love santas coming for us santas coming for us santas coming for us santas coming for us santas coming for us santas coming for us oh santas coming for us oh do do do oh do do do oh do do do oh do do do oh do do do oh do do do santas coming to town oh da da da oh da da da oh da da da oh da da da oh da da da oh da da da santas coming to town oh do do do oh do do do oh do do do oh do do do oh do do do oh do do do santas coming to town oh da da da oh da da da oh da da da oh da da da oh da da da oh da da da santas coming to town
- 4:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ill have a blue christmas without you ooh ooh ooh ooh ill be so blue just thinking about you ooh ooh ooh ooh decorations of red on a green christmas tree ahh ahh wont be the same dear if youre not here with me ooh and when those blue snowflakes start fallin ooh ooh ooh ooh thats when those blue memories start callin ooh ooh ooh ooh youll be doin all right with your christmas of white ahh ahh but ill have a blue blue blue blue christmas ooh ah ooh ooh ah ooh youll be doin all right with your christmas of white ahh ahh but ill have a blue blue blue blue christmas ooh ooh ooh ooh
- 5:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 jingle bell jingle bell jingle bell rock jingle bells swing and jingle bells ring snowin and blowin up bushels of fun now the jingle hop has begun jingle bell jingle bell jingle bell rock jingle bells chime in jingle bell time dancin and prancin in jingle bell square in the frosty air what a bright time its the right time to rock the night away jingle bell time is a swell time to go glidin in a one horse sleigh giddy up jingle horse pick up your feetjingle around the clock mix and a mingle in the jinglin feet thats the jingle bell rock jingle bell jingle bell jingle bell rock jingle bells chime in jingle bell time dancin and prancin in jingle bell square in the frosty air what a bright time its the right time to rock the night away jingle bell time is a swell time to go glidin in a one horse sleigh giddy up jingle horse pick up your feetjingle around the clock mix and a mingle in the jinglin feet thats the jingle bell thats the jingle bell thats the jingle bell rock
- 6:                                                                                                                                                                                                                                                                                                                                                                                                                                                               just hear those sleigh bells jingling ring tingle tingling too ring a ling a ding dong ding come on its lovely weather for a sleigh ride together with you ring a ling a ding dong ding outside the snow is falling and friends are calling yoo hoo ring a ling a ding dong ding come on its lovely weather for a sleigh ride together with you ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding our cheeks are nice and rosy and comfy and cozy are we ring a ling a ding dong ding were snuggled up together like two birds of a feather would be ring a ling a ding dong ding lets take the road before us and sing a chorus or two ring a ling a ding dong ding come on its lovely weather for a sleigh ride together with you ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding our cheeks are nice and rosy and comfy and cozy are we ring a ling a ding dong ding were snuggled up together like two birds of a feather would be ring a ling a ding dong ding lets take the road before us and sing a chorus or two ring a ling a ding dong ding come on its lovely weather for a sleigh ride together with you ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding
- 7:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           jingle bell jingle bell jingle bell rock jingle bells swing and jingle bells ring snowin and blowin up bushels of fun now the jingle hop has begun jingle bell jingle bell jingle bell rock jingle bells chime in jingle bell time dancin and prancin in jingle bell square in the frosty air what a bright time its the right time to rock the night away jingle bell time is a swell time to go glidin in a one horse sleigh giddy up jingle horse pick up your feet jingle around the clock mix and a mingle in the jinglin feet thats the jingle bell rock jingle bell jingle bell jingle bell rock jingle bell jingle bell jingle bell rock jingle bell jingle bell jingle bell rock jingle bell jingle bell jingle bell rock dancin and prancin in jingle bell square in the frosty air what a bright time its the right time to rock the night away jingle bell time is a swell time to go glidin in a one horse sleigh giddy up jingle horse pick up your feet jingle around the clock mix and a mingle in the jinglin feet thats the jingle bell thats the jingle bell thats the jingle bell rock
- 8:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ding dong ding ding dong ding ding dong ding have a holly jolly christmas ding dong ding its the best time of the year i dont know if therell be snow but have a cup of cheer ding dong ding have a holly jolly christmas ding dong ding and when you walk down the street say hello to friends you know and everyone you meet oh ho the mistletoe hung where you can see somebody waits for you kiss her once for me ding dong ding have a holly jolly christmas ding dong ding and in case you didnt hear oh by golly have a holly jolly christmas this year have a holly jolly christmas its the best time of the year have a holly jolly christmas and when you walk down the street say hello to friends you know and everyone you meet oh ho the mistletoe hung where you can see somebody waits for you kiss her once for me ding dong ding have a holly jolly christmas ding dong ding and in case you didnt here oh by golly have a holly jolly christmas this year ding dong ding dong ding dong ding dong ding dong ding
- 9:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      joy to the world the lord is come let earth receive her king let every heart prepare him room and heaven and nature sing and heaven and nature sing and heaven and heaven and nature sing joy to the earth the saviour reigns let men their songs employ while fields and floods rocks hills and plains repeat the sounding joy repeat the sounding joy repeat repeat the sounding joy he rules the earth with truth and grace and makes the nations prove the glories of his righteousness and wonders of his love and wonders of his love and wonders and wonders of his love
-10:                                                                                                                                                                                                                                                                                                                                                                                                                                                               just hear those sleigh bells jingling ring tingle tingling too ring a ling a ding dong ding come on its lovely weather for a sleigh ride together with you ring a ling a ding dong ding outside the snow is falling and friends are calling yoo hoo ring a ling a ding dong ding come on its lovely weather for a sleigh ride together with you ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding our cheeks are nice and rosy and comfy and cozy are we ring a ling a ding dong ding were snuggled up together like two birds of a feather would be ring a ling a ding dong ding lets take the road before us and sing a chorus or two ring a ling a ding dong ding come on its lovely weather for a sleigh ride together with you ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding our cheeks are nice and rosy and comfy and cozy are we ring a ling a ding dong ding were snuggled up together like two birds of a feather would be ring a ling a ding dong ding lets take the road before us and sing a chorus or two ring a ling a ding dong ding come on its lovely weather for a sleigh ride together with you ring a ling a ding dong ding ring a ling a ding dong ding ring a ling a ding dong ding
-11:                                                                nights are getting shorter now hot chocolate fills the air and christmas cheer does too picking out your christmas tree so lovely the joy this time it brings to you oh do do do oh do do do oh do do do oh do do do oh do do do oh do do do santas coming to town oh da da da oh da da da oh da da da oh da da da oh da da da oh da da da santas coming to town sing it to the deer in the sky sing it as they jingle jingle jingle tonight sing it to the moon set it free youre the angel on the top of my tree sing it to the spirit above sing your heart out with all of your love santas coming for us santas coming for us santas coming for us santas coming for us santas coming for us santas coming for us oh santas coming for us send your letters off to santa baby tell him all your secret wishes too send your letters off to santa baby hoping all your wildest dreams come true oh do do do oh do do do oh do do do oh do do do oh do do do oh do do do santas coming to town oh da da da oh da da da oh da da da oh da da da oh da da da oh da da da santas coming to town sing it to the deer in the sky sing it as they jingle jingle jingle tonight sing it to the moon set it free youre the angel on the top of my tree sing it to the spirit above sing your heart out with all of your love santas coming for us santas coming for us santas coming for us santas coming for us santas coming for us santas coming for us oh santas coming for us oh do do do oh do do do oh do do do oh do do do oh do do do oh do do do santas coming to town oh da da da oh da da da oh da da da oh da da da oh da da da oh da da da santas coming to town oh do do do oh do do do oh do do do oh do do do oh do do do oh do do do santas coming to town oh da da da oh da da da oh da da da oh da da da oh da da da oh da da da santas coming to town
-12:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               oh oh yeah yeah oh oh ooh yeah yeah christmas the snows coming down christmas im watching it fall christmas lots of people around christmas baby please come home christmas the church bells in town christmas are ringing in song christmas full of happy sounds christmas baby please come home ah theyre singing deck the halls ah but its not like christmas at all ah cause i remember when you were here ah and all the fun we had last year christmas pretty lights on the tree christmas im watching them shine christmas you should be here with me christmas baby please come home ah theyre singing deck the halls ah but its not like christmas at all ah cause i remember when you were here ah and all the fun we had last year christmas if there was a way christmas id hold back this tear christmas but its christmas day please please please please please please please please please please baby please come home christmas baby please come home christmas baby please come home christmas baby please come home christmas oh yeah yeah christmas woo christmas woo christmas oh yeah christmas
-13:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 oh mr kringle im soon gonna jingle the bells thatll tingle all your troubles away everyones waiting for the man with the bag cause christmas is coming again hes got a sleighful its not gonna stay full hes got stuff to drop at every stop on the way everyones waiting for the man with the bag cause christmas is coming again hell be here with the answers to the prayers that you made through the year youll get yours if youve done everything you should extra special good hell make this december one youll remember the best and the merriest you ever did have everybodys waiting for the man with the bag christmas is here again oh mr cringle im soon gonna jingle the bells thatll tingle all your troubles away everybodys waiting for the man with the bag christmas is here again hes got a sleighful and its not gonna stay full hes got stuff to drop at every stop on the way everybodys waiting for the man with the bag christmas is here again hell be here with the answers to the prayers that you made through the year youll get yours if youve done everything you should extra special good hell make this december the one youll remember the best and the merriest you ever did have everybodys waiting theyre all congregating waiting for the man with the bag waiting for the man with the bag merry christmas
-14:                                                                                                                                                    everybodys in a hurry in a flurry shopping til theyre droppin in the snow kids are cryin dogs are barkin catchin up with folks we barely know sure its madness but its magic as soon as you hang up the mistletoe cause youre the reason for the season no we dont need to keep up with the jones our love is something priceless i dont need diamonds no sparkly things no oh oh oh oh cause you cant buy this a feeling no oh oh oh oh nothing lights my fire or wraps me up baby like you do just want a cozy a cozy little christmas here with you so mr santa mr santa take the day off take the day off get a massage get a massage cause weve got this one all under control a little whiskey a little whiskey were getting frisky ooh and slow dancing to nat king cole no we aint stressin we aint stressin just caressin mm hmm warming up our popsicle toes nothings missin nothings missin cause youre a blessin cause youre the blessin yeah youre the only one im wishing for our love is something priceless i dont need diamonds no sparkly things no oh oh oh oh cause you cant buy this a feeling no oh oh oh oh nothing lights my fire or wraps me up baby like you do just want a cozy a cozy little christmas here with you i dont need anything take back all the cartier and the tiffanys and the chanelwell can i keep that chanel please no no no no i dont need diamonds no sparkly things no oh oh oh oh cause you cant buy this a feeling no oh oh oh oh nothing lights my fire or wraps me up baby like you do just want a cozy a cozy little christmas here with you fa la la la la la la la la la la la la la la la la la just you and me under a tree fa la la la la la la la la la la la la la la la la la a cozy little christmas here with you
-15:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 jingle bell jingle bell jingle bell rock jingle bells swing and jingle bells ring snowin and blowin up bushels of fun now the jingle hop has begun jingle bell jingle bell jingle bell rock jingle bells chime in jingle bell time dancin and prancin in jingle bell square in the frosty air what a bright time its the right time to rock the night away jingle bell time is a swell time to go glidin in a one horse sleigh giddy up jingle horse pick up your feetjingle around the clock mix and a mingle in the jinglin feet thats the jingle bell rock jingle bell jingle bell jingle bell rock jingle bells chime in jingle bell time dancin and prancin in jingle bell square in the frosty air what a bright time its the right time to rock the night away jingle bell time is a swell time to go glidin in a one horse sleigh giddy up jingle horse pick up your feetjingle around the clock mix and a mingle in the jinglin feet thats the jingle bell thats the jingle bell thats the jingle bell rock
-16:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      oh my love weve had our share of tears oh my friend weve had our hopes and fears oh my friends its been a long hard year but now its christmas yes its christmas thank god its christmas the moon and stars seem awful cold and bright lets hope the snow will make this christmas right my friend the world will share this special night because its christmas yes its christmas thank god its christmas for one night thank god its christmas yeah thank god its christmas thank god its christmas can it be christmas let it be christmas every day oh my love we live in troubled days oh my friend we have the strangest ways all my friends on this one day of days thank god its christmas yes its christmas thank god its christmas for one day thank god its christmas yes its christmas thank god its christmas ooh yeah thank god its christmas yes yes yes yes its christmas thank god its christmas for one day a very merry christmas to you all
-17:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  hang all the mistletoe im going to get to know you better yeah this christmas and as we trim the tree how much fun its going to be together yeah ha this christmas fireside is blazing bright were caroling through the night and this christmas will be yeah a very special christmas for me yeah ooh hey ooh presents and cards are here my world is filled with cheer and you oh yeah this christmas and as i look around your eyes outshine the town they do this christmas fireside is blazing bright were caroling through the night and this christmas will be a very special christmas for me yeah ooh alright break it down ha ha ha ooh yeah yeah yeah alright yeah yeah yeah yeah yeah yeah yeah yeah yeah alright now right now now fireside oh is blazing bright were caroling through the night yeah and this christmas will be oh a very special christmas for me yeah and this christmas will be a very special christmas for me oh oh yeah yeah yeah yeah merry christmas ooh yeah going to have a merry christmas oh yeah oh oh merry christmas oh it will be oh a very very very special christmas a very special christmas this christmas alright now right now yeah oh it will be now oh this christmas oh this will be this will be baby a very special have a merry merry christmas and a happy new year oh hey alright yeah yeah yeah yeah merry christmas this christmas oh this will be this will be baby
-18:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        the mood is right the spirits up were here tonight and thats enough simply having a wonderful christmas time simply having a wonderful christmas time the partys on the feelings here that only comes this time of year simply having a wonderful christmas time simply having a wonderful christmas time the choir of children sing their song ding dong ding dong ding dong ding simply having a wonderful christmas time were simply having a wonderful christmas time simply having a wonderful christmas time the word is out about the town to lift a glass and dont look down simply having a wonderful christmas time were simply having a wonderful christmas time the choir of children sing their song they practiced all year long ding dong ding dong ding dong ding dong ding dong ding dong ding dong ding dong the partys on the spirits up were here tonight and thats enough simply having a wonderful christmas time were simply having a wonderful christmas time simply having a wonderful christmas time the moon is right the spirits up were here tonight and thats enough were simply having a wonderful christmas time simply having a wonderful christmas time were simply having a wonderful christmas time simply having a wonderful christmas time simply having a wonderful christmas time oh oh oh oh oh oh oh christmas time
-19:                                                                                                                                                                                      its the most beautiful time of the year lights fill the streets spreading so much cheer i should be playing in the winter snow but ima be under the mistletoei dont wanna miss out on the holiday but i cant stop staring at your face i should be playing in the winter snow but ima be under the mistletoe with you shawty with you with you shawty with you with you under the mistletoe everyones gathering around the fire chestnuts roasting like a hot july i should be chilling with my folks i know but ima be under the mistletoeword on the street santas coming tonight reindeers flying through the sky so high i should be making a list i know but ima be under the mistletoe with you shawty with you with you shawty with you with you under the mistletoe with you shawty with you with you shawty with you with you under the mistletoe ayy love the wise men followed the star the way i followed my heart and it led me to a miracleayy love dont you buy me nothing cause i am feeling one thing your lips on my lips thats a merry merry christmas its the most beautiful time of the year lights fill the streets spreading so much cheer i should be playing in the winter snow but ima be under the mistletoei dont wanna miss out on the holiday but i cant stop staring at your face i should be playing in the winter snow but ima be under the mistletoe with you shawty with you with you shawty with you with you under the mistletoe yeah with you shawty with you with you shawty with you with you under the mistletoe under the mistletoe kiss me underneath the mistletoe show me baby that you love me so oh oh oh oh oh kiss me underneath the mistletoe show me baby that you love me so oh oh oh oh oh
-20: oooh ooh ooh oooh there is something special about this time of year the christmas feelings everywherei just got home to join you ive been away too long been away too long but now im back to share my lovefriends are reunited one big family filled with love to last throughout the year christmas time time to share our love come and join the tidings to the world christmas time the best time of the year yes its christmas time oh christmas time you and me together sleigh ride in the park loving kissing straight from the heart straight from my heartsnowflakes falling gently a smell of chestnuts in the air and the christmas lights they gleam across the sky oh its christmas time christmas time time to share our love come and join the tidings to the world christmas time its christmas time the best time of the year the best time yes its christmas time christmas time oh yeah do you remember everything felt so nice when i held you close to medo you remember those cold christmas nights when we saw the world in harmony christmas time christmas time time to share our love time to share our love come and join the tidings to the world the tidings to the world christmas time its christmas time the best time of the year always the best time yes its christmas time christmas time all around the world its christmas time all the boys and girls christmas time time to share our love come and join the tidings to the world to the world christmas time time to share our love come and join come and join the tidings to the world come and join christmas time time to share our love everybody sing come and join the tidings to the world christmas time time to share our love come and join the tidings to the world christmas time time to share our love come and join the tidings to the world christmas time time to share our love come and join the tidings to the world
-         word word_total count word_danceability
- 1:    jingle        205    35        0.12053659
- 2:        do        436    72        0.11047706
- 3:        da        436    72        0.11047706
- 4:       ooh        119    25        0.09768908
- 5:    jingle        189    26        0.09753439
- 6:         a        309    56        0.09587055
- 7:      bell        205    27        0.09298537
- 8:      ding        200    26        0.08736000
- 9:       and        104    15        0.08379808
-10:      ding        309    48        0.08217476
-11:        oh        436    50        0.07672018
-12: christmas        193    26        0.07557513
-13:       the        241    29        0.07484647
-14:        la        364    34        0.07229670
-15:      bell        189    19        0.07127513
-16: christmas        177    22        0.07122034
-17:      yeah        264    31        0.06751894
-18:      time        224    19        0.06565179
-19:       the        329    32        0.06477812
-20:      time        349    39        0.06414327</code></pre>
+head(setorder(songDT, -word_danceability), 20)[,c(name, danceability, word_total, word, count, word_danceability)]</code></pre>
+<pre><code>  [1] &quot;Jingle Bell Rock&quot;                                     
+  [2] &quot;Santa&#39;s Coming for Us&quot;                                
+  [3] &quot;Santa&#39;s Coming for Us&quot;                                
+  [4] &quot;Blue Christmas&quot;                                       
+  [5] &quot;Jingle Bell Rock&quot;                                     
+  [6] &quot;Sleigh Ride&quot;                                          
+  [7] &quot;Jingle Bell Rock&quot;                                     
+  [8] &quot;A Holly Jolly Christmas - Single Version&quot;             
+  [9] &quot;Joy To The World&quot;                                     
+ [10] &quot;Sleigh Ride&quot;                                          
+ [11] &quot;Santa&#39;s Coming for Us&quot;                                
+ [12] &quot;Christmas (Baby Please Come Home)&quot;                    
+ [13] &quot;Man With The Bag&quot;                                     
+ [14] &quot;Cozy Little Christmas&quot;                                
+ [15] &quot;Jingle Bell Rock&quot;                                     
+ [16] &quot;Thank God It&#39;s Christmas&quot;                             
+ [17] &quot;This Christmas&quot;                                       
+ [18] &quot;Wonderful Christmastime (Edited Version) [Remastered]&quot;
+ [19] &quot;Mistletoe&quot;                                            
+ [20] &quot;Christmas Time&quot;                                       
+ [21] &quot;0.706&quot;                                                
+ [22] &quot;0.669&quot;                                                
+ [23] &quot;0.669&quot;                                                
+ [24] &quot;0.465&quot;                                                
+ [25] &quot;0.709&quot;                                                
+ [26] &quot;0.529&quot;                                                
+ [27] &quot;0.706&quot;                                                
+ [28] &quot;0.672&quot;                                                
+ [29] &quot;0.581&quot;                                                
+ [30] &quot;0.529&quot;                                                
+ [31] &quot;0.669&quot;                                                
+ [32] &quot;0.561&quot;                                                
+ [33] &quot;0.622&quot;                                                
+ [34] &quot;0.774&quot;                                                
+ [35] &quot;0.709&quot;                                                
+ [36] &quot;0.573&quot;                                                
+ [37] &quot;0.575&quot;                                                
+ [38] &quot;0.774&quot;                                                
+ [39] &quot;0.666&quot;                                                
+ [40] &quot;0.574&quot;                                                
+ [41] &quot;205&quot;                                                  
+ [42] &quot;436&quot;                                                  
+ [43] &quot;436&quot;                                                  
+ [44] &quot;119&quot;                                                  
+ [45] &quot;189&quot;                                                  
+ [46] &quot;309&quot;                                                  
+ [47] &quot;205&quot;                                                  
+ [48] &quot;200&quot;                                                  
+ [49] &quot;104&quot;                                                  
+ [50] &quot;309&quot;                                                  
+ [51] &quot;436&quot;                                                  
+ [52] &quot;193&quot;                                                  
+ [53] &quot;241&quot;                                                  
+ [54] &quot;364&quot;                                                  
+ [55] &quot;189&quot;                                                  
+ [56] &quot;177&quot;                                                  
+ [57] &quot;264&quot;                                                  
+ [58] &quot;224&quot;                                                  
+ [59] &quot;329&quot;                                                  
+ [60] &quot;349&quot;                                                  
+ [61] &quot;jingle&quot;                                               
+ [62] &quot;do&quot;                                                   
+ [63] &quot;da&quot;                                                   
+ [64] &quot;ooh&quot;                                                  
+ [65] &quot;jingle&quot;                                               
+ [66] &quot;a&quot;                                                    
+ [67] &quot;bell&quot;                                                 
+ [68] &quot;ding&quot;                                                 
+ [69] &quot;and&quot;                                                  
+ [70] &quot;ding&quot;                                                 
+ [71] &quot;oh&quot;                                                   
+ [72] &quot;christmas&quot;                                            
+ [73] &quot;the&quot;                                                  
+ [74] &quot;la&quot;                                                   
+ [75] &quot;bell&quot;                                                 
+ [76] &quot;christmas&quot;                                            
+ [77] &quot;yeah&quot;                                                 
+ [78] &quot;time&quot;                                                 
+ [79] &quot;the&quot;                                                  
+ [80] &quot;time&quot;                                                 
+ [81] &quot;35&quot;                                                   
+ [82] &quot;72&quot;                                                   
+ [83] &quot;72&quot;                                                   
+ [84] &quot;25&quot;                                                   
+ [85] &quot;26&quot;                                                   
+ [86] &quot;56&quot;                                                   
+ [87] &quot;27&quot;                                                   
+ [88] &quot;26&quot;                                                   
+ [89] &quot;15&quot;                                                   
+ [90] &quot;48&quot;                                                   
+ [91] &quot;50&quot;                                                   
+ [92] &quot;26&quot;                                                   
+ [93] &quot;29&quot;                                                   
+ [94] &quot;34&quot;                                                   
+ [95] &quot;19&quot;                                                   
+ [96] &quot;22&quot;                                                   
+ [97] &quot;31&quot;                                                   
+ [98] &quot;19&quot;                                                   
+ [99] &quot;32&quot;                                                   
+[100] &quot;39&quot;                                                   
+[101] &quot;0.120536585365854&quot;                                    
+[102] &quot;0.110477064220183&quot;                                    
+[103] &quot;0.110477064220183&quot;                                    
+[104] &quot;0.0976890756302521&quot;                                   
+[105] &quot;0.0975343915343915&quot;                                   
+[106] &quot;0.0958705501618123&quot;                                   
+[107] &quot;0.0929853658536585&quot;                                   
+[108] &quot;0.08736&quot;                                              
+[109] &quot;0.0837980769230769&quot;                                   
+[110] &quot;0.0821747572815534&quot;                                   
+[111] &quot;0.0767201834862385&quot;                                   
+[112] &quot;0.0755751295336788&quot;                                   
+[113] &quot;0.0748464730290456&quot;                                   
+[114] &quot;0.0722967032967033&quot;                                   
+[115] &quot;0.0712751322751323&quot;                                   
+[116] &quot;0.0712203389830508&quot;                                   
+[117] &quot;0.0675189393939394&quot;                                   
+[118] &quot;0.0656517857142857&quot;                                   
+[119] &quot;0.0647781155015198&quot;                                   
+[120] &quot;0.0641432664756447&quot;                                   </code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">

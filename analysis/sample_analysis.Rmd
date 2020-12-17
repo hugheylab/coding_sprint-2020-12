@@ -47,5 +47,5 @@ We can merge the tables and then figure out which words are the most "danceable"
 ```{r analyze dance words}
 songDT = merge(songDT, lyricDT, by = c('id.x', 'name'))
 songDT = songDT[, word_danceability := ((count / word_total) * danceability)]
-head(setorder(songDT, -word_danceability), 20)
+head(setorder(songDT, -word_danceability), 20)[,c(name, danceability, word_total, word, count, word_danceability)]
 ```
