@@ -24,8 +24,17 @@ library(ggplot2)
 ```
 
 
-```{r laod all data}
-
+```{r load all data}
+songDT = fread('data/song_data')
+head(songDT, 5)
 ```
 
+## Use word count function
 
+Pass in the data.table to the function and it will return back a data table with each song name, id, word, and count. You can also pass a list of words to exclude `wordExclude` that will exclude those words from the list.
+
+```{r use word count}
+source('code/get_lyric_word_count.R')
+head(getLyricWordCount(songDT), 15)
+head(getLyricWordCount(songDT, c('merry','holiday')), 15)
+```
