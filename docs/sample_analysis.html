@@ -515,16 +515,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree26340b3ae752f65a9ab01730ed6c1183853ae26ftargetblank26340b3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/26340b3ae752f65a9ab01730ed6c1183853ae26f" target="_blank">26340b3</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree9db433b4a78bd1dbaa4245c991445db1b75497a2targetblank9db433ba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/9db433b4a78bd1dbaa4245c991445db1b75497a2" target="_blank">9db433b</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree26340b3ae752f65a9ab01730ed6c1183853ae26ftargetblank26340b3a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree9db433b4a78bd1dbaa4245c991445db1b75497a2targetblank9db433ba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/26340b3ae752f65a9ab01730ed6c1183853ae26f" target="_blank">26340b3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/9db433b4a78bd1dbaa4245c991445db1b75497a2" target="_blank">9db433b</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -574,6 +574,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/hugheylab/coding_sprint-2020-12/blob/9db433b4a78bd1dbaa4245c991445db1b75497a2/analysis/sample_analysis.Rmd" target="_blank">9db433b</a>
+</td>
+<td>
+Josh Schoenbachler
+</td>
+<td>
+2020-12-17
+</td>
+<td>
+Fix analysis
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/hugheylab/coding_sprint-2020-12/9db433b4a78bd1dbaa4245c991445db1b75497a2/docs/sample_analysis.html" target="_blank">9db433b</a>
+</td>
+<td>
+Josh Schoenbachler
+</td>
+<td>
+2020-12-17
+</td>
+<td>
+Fix analysis
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -842,127 +876,51 @@ head(lyricDT, 15)</code></pre>
 <p>We can merge the tables and then figure out which words are the most “danceable” based on a column that comes from spotify.</p>
 <pre class="r"><code>songDT = merge(songDT, lyricDT, by = c(&#39;id.x&#39;, &#39;name&#39;))
 songDT = songDT[, word_danceability := ((count / word_total) * danceability)]
-head(setorder(songDT, -word_danceability), 20)[,c(name, danceability, word_total, word, count, word_danceability)]</code></pre>
-<pre><code>  [1] &quot;Jingle Bell Rock&quot;                                     
-  [2] &quot;Santa&#39;s Coming for Us&quot;                                
-  [3] &quot;Santa&#39;s Coming for Us&quot;                                
-  [4] &quot;Blue Christmas&quot;                                       
-  [5] &quot;Jingle Bell Rock&quot;                                     
-  [6] &quot;Sleigh Ride&quot;                                          
-  [7] &quot;Jingle Bell Rock&quot;                                     
-  [8] &quot;A Holly Jolly Christmas - Single Version&quot;             
-  [9] &quot;Joy To The World&quot;                                     
- [10] &quot;Sleigh Ride&quot;                                          
- [11] &quot;Santa&#39;s Coming for Us&quot;                                
- [12] &quot;Christmas (Baby Please Come Home)&quot;                    
- [13] &quot;Man With The Bag&quot;                                     
- [14] &quot;Cozy Little Christmas&quot;                                
- [15] &quot;Jingle Bell Rock&quot;                                     
- [16] &quot;Thank God It&#39;s Christmas&quot;                             
- [17] &quot;This Christmas&quot;                                       
- [18] &quot;Wonderful Christmastime (Edited Version) [Remastered]&quot;
- [19] &quot;Mistletoe&quot;                                            
- [20] &quot;Christmas Time&quot;                                       
- [21] &quot;0.706&quot;                                                
- [22] &quot;0.669&quot;                                                
- [23] &quot;0.669&quot;                                                
- [24] &quot;0.465&quot;                                                
- [25] &quot;0.709&quot;                                                
- [26] &quot;0.529&quot;                                                
- [27] &quot;0.706&quot;                                                
- [28] &quot;0.672&quot;                                                
- [29] &quot;0.581&quot;                                                
- [30] &quot;0.529&quot;                                                
- [31] &quot;0.669&quot;                                                
- [32] &quot;0.561&quot;                                                
- [33] &quot;0.622&quot;                                                
- [34] &quot;0.774&quot;                                                
- [35] &quot;0.709&quot;                                                
- [36] &quot;0.573&quot;                                                
- [37] &quot;0.575&quot;                                                
- [38] &quot;0.774&quot;                                                
- [39] &quot;0.666&quot;                                                
- [40] &quot;0.574&quot;                                                
- [41] &quot;205&quot;                                                  
- [42] &quot;436&quot;                                                  
- [43] &quot;436&quot;                                                  
- [44] &quot;119&quot;                                                  
- [45] &quot;189&quot;                                                  
- [46] &quot;309&quot;                                                  
- [47] &quot;205&quot;                                                  
- [48] &quot;200&quot;                                                  
- [49] &quot;104&quot;                                                  
- [50] &quot;309&quot;                                                  
- [51] &quot;436&quot;                                                  
- [52] &quot;193&quot;                                                  
- [53] &quot;241&quot;                                                  
- [54] &quot;364&quot;                                                  
- [55] &quot;189&quot;                                                  
- [56] &quot;177&quot;                                                  
- [57] &quot;264&quot;                                                  
- [58] &quot;224&quot;                                                  
- [59] &quot;329&quot;                                                  
- [60] &quot;349&quot;                                                  
- [61] &quot;jingle&quot;                                               
- [62] &quot;do&quot;                                                   
- [63] &quot;da&quot;                                                   
- [64] &quot;ooh&quot;                                                  
- [65] &quot;jingle&quot;                                               
- [66] &quot;a&quot;                                                    
- [67] &quot;bell&quot;                                                 
- [68] &quot;ding&quot;                                                 
- [69] &quot;and&quot;                                                  
- [70] &quot;ding&quot;                                                 
- [71] &quot;oh&quot;                                                   
- [72] &quot;christmas&quot;                                            
- [73] &quot;the&quot;                                                  
- [74] &quot;la&quot;                                                   
- [75] &quot;bell&quot;                                                 
- [76] &quot;christmas&quot;                                            
- [77] &quot;yeah&quot;                                                 
- [78] &quot;time&quot;                                                 
- [79] &quot;the&quot;                                                  
- [80] &quot;time&quot;                                                 
- [81] &quot;35&quot;                                                   
- [82] &quot;72&quot;                                                   
- [83] &quot;72&quot;                                                   
- [84] &quot;25&quot;                                                   
- [85] &quot;26&quot;                                                   
- [86] &quot;56&quot;                                                   
- [87] &quot;27&quot;                                                   
- [88] &quot;26&quot;                                                   
- [89] &quot;15&quot;                                                   
- [90] &quot;48&quot;                                                   
- [91] &quot;50&quot;                                                   
- [92] &quot;26&quot;                                                   
- [93] &quot;29&quot;                                                   
- [94] &quot;34&quot;                                                   
- [95] &quot;19&quot;                                                   
- [96] &quot;22&quot;                                                   
- [97] &quot;31&quot;                                                   
- [98] &quot;19&quot;                                                   
- [99] &quot;32&quot;                                                   
-[100] &quot;39&quot;                                                   
-[101] &quot;0.120536585365854&quot;                                    
-[102] &quot;0.110477064220183&quot;                                    
-[103] &quot;0.110477064220183&quot;                                    
-[104] &quot;0.0976890756302521&quot;                                   
-[105] &quot;0.0975343915343915&quot;                                   
-[106] &quot;0.0958705501618123&quot;                                   
-[107] &quot;0.0929853658536585&quot;                                   
-[108] &quot;0.08736&quot;                                              
-[109] &quot;0.0837980769230769&quot;                                   
-[110] &quot;0.0821747572815534&quot;                                   
-[111] &quot;0.0767201834862385&quot;                                   
-[112] &quot;0.0755751295336788&quot;                                   
-[113] &quot;0.0748464730290456&quot;                                   
-[114] &quot;0.0722967032967033&quot;                                   
-[115] &quot;0.0712751322751323&quot;                                   
-[116] &quot;0.0712203389830508&quot;                                   
-[117] &quot;0.0675189393939394&quot;                                   
-[118] &quot;0.0656517857142857&quot;                                   
-[119] &quot;0.0647781155015198&quot;                                   
-[120] &quot;0.0641432664756447&quot;                                   </code></pre>
+setorder(songDT, -word_danceability)
+cols = c(&#39;name&#39;, &#39;danceability&#39;, &#39;word_total&#39;, &#39;word&#39;, &#39;count&#39;, &#39;word_danceability&#39;)
+head(songDT[,..cols], 20)</code></pre>
+<pre><code>                                                     name danceability
+ 1:                                      Jingle Bell Rock        0.706
+ 2:                                 Santa&#39;s Coming for Us        0.669
+ 3:                                 Santa&#39;s Coming for Us        0.669
+ 4:                                        Blue Christmas        0.465
+ 5:                                      Jingle Bell Rock        0.709
+ 6:                                           Sleigh Ride        0.529
+ 7:                                      Jingle Bell Rock        0.706
+ 8:              A Holly Jolly Christmas - Single Version        0.672
+ 9:                                      Joy To The World        0.581
+10:                                           Sleigh Ride        0.529
+11:                                 Santa&#39;s Coming for Us        0.669
+12:                     Christmas (Baby Please Come Home)        0.561
+13:                                      Man With The Bag        0.622
+14:                                 Cozy Little Christmas        0.774
+15:                                      Jingle Bell Rock        0.709
+16:                              Thank God It&#39;s Christmas        0.573
+17:                                        This Christmas        0.575
+18: Wonderful Christmastime (Edited Version) [Remastered]        0.774
+19:                                             Mistletoe        0.666
+20:                                        Christmas Time        0.574
+    word_total      word count word_danceability
+ 1:        205    jingle    35        0.12053659
+ 2:        436        do    72        0.11047706
+ 3:        436        da    72        0.11047706
+ 4:        119       ooh    25        0.09768908
+ 5:        189    jingle    26        0.09753439
+ 6:        309         a    56        0.09587055
+ 7:        205      bell    27        0.09298537
+ 8:        200      ding    26        0.08736000
+ 9:        104       and    15        0.08379808
+10:        309      ding    48        0.08217476
+11:        436        oh    50        0.07672018
+12:        193 christmas    26        0.07557513
+13:        241       the    29        0.07484647
+14:        364        la    34        0.07229670
+15:        189      bell    19        0.07127513
+16:        177 christmas    22        0.07122034
+17:        264      yeah    31        0.06751894
+18:        224      time    19        0.06565179
+19:        329       the    32        0.06477812
+20:        349      time    39        0.06414327</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
