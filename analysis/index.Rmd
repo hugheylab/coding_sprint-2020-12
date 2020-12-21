@@ -29,7 +29,6 @@ Once you're finished please
 
 ## Check out the published pages here:
 
- * [Darwin](darwin_file.html)
  * [Dora](dora_file.html)
  * [Elliot](elliot_file.html)
  * [Jake](jake_file.html)
