@@ -27,8 +27,6 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -39,15 +37,6 @@ div.section {
   padding-top: 12px;
 }
 </style>
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -406,7 +395,7 @@ div.tocify {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -415,7 +404,7 @@ div.tocify {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -424,10 +413,10 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-12-17
+<strong>Last updated:</strong> 2020-12-21
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>coding_sprint-2020-12/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -443,12 +432,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
 </div>
 </div>
 </div>
@@ -472,7 +461,7 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 </div>
 <div id="strongSeedstrongcodesetseed20200710code" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The command <code>set.seed(20200710)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+<p>The command <code>set.seed(20200710)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
 </div>
 </div>
 </div>
@@ -515,27 +504,23 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree8e1907b121380a2e5e3994b0637eb73ea1448ad7targetblank8e1907ba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/8e1907b121380a2e5e3994b0637eb73ea1448ad7" target="_blank">8e1907b</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree45a42a54d630da05c084733bcbb6fe99a6abb6f5targetblank45a42a5a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/45a42a54d630da05c084733bcbb6fe99a6abb6f5" target="_blank">45a42a5</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree8e1907b121380a2e5e3994b0637eb73ea1448ad7targetblank8e1907ba" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree45a42a54d630da05c084733bcbb6fe99a6abb6f5targetblank45a42a5a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/8e1907b121380a2e5e3994b0637eb73ea1448ad7" target="_blank">8e1907b</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/45a42a54d630da05c084733bcbb6fe99a6abb6f5" target="_blank">45a42a5</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
 Ignored files:
-    Ignored:    .Rhistory
     Ignored:    .Rproj.user/
-
-Unstaged changes:
-    Modified:   analysis/sample_analysis.Rmd
 
 </code></pre>
 <p>
@@ -574,6 +559,57 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/hugheylab/coding_sprint-2020-12/blob/45a42a54d630da05c084733bcbb6fe99a6abb6f5/analysis/sample_analysis.Rmd" target="_blank">45a42a5</a>
+</td>
+<td>
+Elliot Outland
+</td>
+<td>
+2020-12-21
+</td>
+<td>
+updated sample analysis and song data file
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/hugheylab/coding_sprint-2020-12/blob/8b9fcc271fc334e450850ff0478552fd4f5ee124/analysis/sample_analysis.Rmd" target="_blank">8b9fcc2</a>
+</td>
+<td>
+Josh Schoenbachler
+</td>
+<td>
+2020-12-17
+</td>
+<td>
+Update with both names
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/hugheylab/coding_sprint-2020-12/8b9fcc271fc334e450850ff0478552fd4f5ee124/docs/sample_analysis.html" target="_blank">8b9fcc2</a>
+</td>
+<td>
+Josh Schoenbachler
+</td>
+<td>
+2020-12-17
+</td>
+<td>
+Update with both names
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -821,14 +857,15 @@ Add all files from old repo with basic strip down of files.
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>ALL data files are located within the <code>data</code> folder. This should describe how to access the data and what you can do with it.</p>
+<p>All data files are located within the <code>data</code> folder. The data consist of song titles, artist names, audio features (e.g., key, ‘instrumentalness’, ‘danceability’), and lyrics taken from Spotify’s ‘Christmas Hits’ playlist.</p>
+<p>Descriptions of audio features can be found <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-several-audio-features/">here</a>. The <code>key</code> column has already been translated from integer to seven-letter pitch notation.</p>
 </div>
 <div id="load-data" class="section level2">
 <h2>Load data</h2>
 <p>Load data example here.</p>
 <pre class="r"><code>library(data.table)
 library(ggplot2)</code></pre>
-<pre class="r"><code>songDT = fread(&#39;data/song_data.csv&#39;)
+<pre class="r"><code>songDT = fread(&#39;data/song_data.csv.gz&#39;)
 head(songDT, 5)</code></pre>
 <pre><code>                 track_id                               track_name popularity
 1: 5SyQ5OhqrkJGb35V7RBoL0          Merry Christmas, Happy Holidays          9
@@ -849,11 +886,11 @@ head(songDT, 5)</code></pre>
 4:                                                                                                                    pop|post-teen pop
 5:                                                                                                                    pop|post-teen pop
    danceability energy key loudness mode speechiness acousticness
-1:        0.650  0.934   5   -4.209    1      0.0474       0.1160
-2:        0.680  0.593   5   -5.036    0      0.0281       0.0198
-3:        0.240  0.598   7   -8.435    1      0.0369       0.7660
-4:        0.504  0.800   2   -2.763    1      0.0391       0.1250
-5:        0.748  0.778   0   -5.752    1      0.1370       0.0501
+1:        0.650  0.934   F   -4.209    1      0.0474       0.1160
+2:        0.680  0.593   F   -5.036    0      0.0281       0.0198
+3:        0.240  0.598   G   -8.435    1      0.0369       0.7660
+4:        0.504  0.800   D   -2.763    1      0.0391       0.1250
+5:        0.748  0.778   C   -5.752    1      0.1370       0.0501
    instrumentalness liveness valence   tempo duration_ms time_signature
 1:                0    0.867   0.737 105.001      252200              4
 2:                0    0.145   0.482 114.917      185739              4
@@ -989,6 +1026,25 @@ head(songDT[, ..cols], 20)</code></pre>
 18:        387      more    36        0.05934884
 19:        224    simply    17        0.05874107
 20:        224    having    17        0.05874107</code></pre>
+</div>
+<div id="sample-analysis-of-song-key-frequencies" class="section level2">
+<h2>Sample analysis of song key frequencies</h2>
+<p>The plot below shows the frequencies of the keys represented in pop songs from Spotify’s ‘Christmas Hits’ playlist.</p>
+<pre class="r"><code>songDT = fread(&#39;data/song_data.csv.gz&#39;)
+
+theme_set(theme_bw())
+
+#labeller to convert binary mode to major/minor
+modeLabels = c(&#39;Minor&#39;, &#39;Major&#39;)
+names(modeLabels) = c(0, 1)
+
+ggplot(data = songDT[genre %like% &#39;pop&#39;]) +
+  geom_bar(aes(x = as.factor(key))) +
+  facet_grid(~mode, labeller =  as_labeller(modeLabels)) +
+  
+  ggtitle(&#39;Frequencies of pop song keys&#39;) +
+  xlab(&#39;Key&#39;)</code></pre>
+<p><img src="figure/sample_analysis.Rmd/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -997,37 +1053,43 @@ head(songDT[, ..cols], 20)</code></pre>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 3.6.3 (2020-02-29)
-Platform: x86_64-apple-darwin15.6.0 (64-bit)
-Running under: macOS  10.16
+<pre><code>R version 4.0.3 (2020-10-10)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Debian GNU/Linux 10 (buster)
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.8.0
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.8.0
 
 locale:
-[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 
 attached base packages:
 [1] parallel  stats     graphics  grDevices utils     datasets  methods  
 [8] base     
 
 other attached packages:
-[1] doParallel_1.0.16 iterators_1.0.13  foreach_1.5.1     stringr_1.4.0    
-[5] ggplot2_3.3.2     data.table_1.13.2
+[1] doParallel_1.0.15 iterators_1.0.13  foreach_1.5.1     stringr_1.4.0    
+[5] ggplot2_3.3.2     data.table_1.13.4
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.5       pillar_1.4.6     compiler_3.6.3   later_1.1.0.1   
- [5] git2r_0.27.1     workflowr_1.6.2  tools_3.6.3      digest_0.6.27   
- [9] evaluate_0.14    lifecycle_0.2.0  tibble_3.0.4     gtable_0.3.0    
-[13] pkgconfig_2.0.3  rlang_0.4.8      rstudioapi_0.13  yaml_2.2.1      
-[17] xfun_0.19        withr_2.3.0      dplyr_1.0.2      knitr_1.30      
-[21] generics_0.1.0   fs_1.5.0         vctrs_0.3.5      rprojroot_2.0.2 
-[25] grid_3.6.3       tidyselect_1.1.0 glue_1.4.2       R6_2.5.0        
-[29] rmarkdown_2.5    purrr_0.3.4      magrittr_2.0.1   whisker_0.4     
-[33] codetools_0.2-18 scales_1.1.1     promises_1.1.1   ellipsis_0.3.1  
-[37] htmltools_0.5.0  colorspace_2.0-0 httpuv_1.5.4     stringi_1.5.3   
-[41] munsell_0.5.0    crayon_1.3.4    </code></pre>
+ [1] Rcpp_1.0.5        pillar_1.4.6      compiler_4.0.3    later_1.1.0.1    
+ [5] git2r_0.27.1      workflowr_1.6.2   R.methodsS3_1.8.1 R.utils_2.10.1   
+ [9] tools_4.0.3       digest_0.6.25     evaluate_0.14     lifecycle_0.2.0  
+[13] tibble_3.0.3      gtable_0.3.0      pkgconfig_2.0.3   rlang_0.4.7      
+[17] rstudioapi_0.11   yaml_2.2.1        xfun_0.17         withr_2.2.0      
+[21] dplyr_1.0.2       knitr_1.29        generics_0.0.2    fs_1.5.0         
+[25] vctrs_0.3.4       rprojroot_1.3-2   grid_4.0.3        tidyselect_1.1.0 
+[29] glue_1.4.2        R6_2.4.1          rmarkdown_2.3     farver_2.0.3     
+[33] purrr_0.3.4       magrittr_1.5      whisker_0.4       codetools_0.2-16 
+[37] backports_1.1.10  scales_1.1.1      promises_1.1.1    ellipsis_0.3.1   
+[41] htmltools_0.5.0   colorspace_1.4-1  httpuv_1.5.4      labeling_0.3     
+[45] stringi_1.5.3     munsell_0.5.0     crayon_1.3.4      R.oo_1.24.0      </code></pre>
 </div>
 </div>
 
@@ -1054,7 +1116,7 @@ footer is added to webpages before the MathJax javascript. -->
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
