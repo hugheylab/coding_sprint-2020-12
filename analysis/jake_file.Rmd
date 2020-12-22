@@ -79,3 +79,36 @@ ggplot(data = songDT[genre %like% 'pop']) +
   xlab('Key')
   
 ```
+
+##
+```{r}
+p = ggplot(songDT) +
+  geom_point(aes(x = tempo, y = liveness), shape = 21)
+p
+```
+
+##
+```{r}
+d1 = lyricDT[, .(n_songs = .N, mean_frac = mean(count / word_total)),
+             by = word]
+d1[, frac_songs := n_songs / nrow(songDT)]
+setorder(d1, -n_songs)
+
+p = ggplot(d1) +
+  geom_histogram(aes(x = mean_frac)) +
+  scale_x_log10()
+p
+```
+
+##
+```{r}
+lyricDT[, freq := count / word_total]
+d1 = lyricDT[, .(freq = mean(freq)), by = .(track_name, word)]
+d2 = dcast(d1, track_name ~ word, value.var = 'freq', fill = 0)
+corResult = cor(d2[, 2:ncol(d2)])
+d3 = as.data.table(corResult, keep.rownames = TRUE)
+setnames(d3, 'rn', 'word_1')
+d4 = melt(d3, id.vars = 'word_1', variable.name = 'word_2')
+setorder(d4, -value)
+```
+
