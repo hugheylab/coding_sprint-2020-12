@@ -79,3 +79,52 @@ ggplot(data = songDT[genre %like% 'pop']) +
   xlab('Key')
   
 ```
+
+
+```{r}
+songDT = fread('data/song_data.csv.gz')
+songDT = songDT[,-c("lyrics")]
+head(songDT)
+
+l = lm(popularity~artist_2, data=songDT)
+summary(l)$coef
+ggplot(songDT) + geom_boxplot(aes(x=key, y=popularity, color=key))
+
+```
+
+```{r}
+songDT[,artist_num:=1]
+songDT[artist_2 != "", artist_num:=artist_num+1]
+songDT[artist_3 != "", artist_num:=artist_num+1]
+songDT[artist_4 != "", artist_num:=artist_num+1]
+songDT[, artist234:=ifelse(artist_num>1,"multiple artists", "single artist")]
+
+ggplot(songDT) + geom_boxplot(aes(x=as.factor(artist_num), y=popularity))
+ggplot(songDT) + geom_boxplot(aes(x=artist234, y=popularity, color=artist234))
+```
+
+
+```{r}
+songDT[,.N,by=artist_1][N>1]
+songDT[artist_1=="Michael Bublé"]
+nrow(songDT)
+```
+
+
+```{r}
+songDT = fread('data/song_data.csv.gz')
+lyricDT = getLyricWordCount(songDT, c("a", "the", "i", "to", "and", "at", "my", "its", "in"))
+lyricDT[, ratio:=count/word_total]
+songDT = songDT[,-c("lyrics")]
+songDT2 = merge(songDT, lyricDT, by = c('track_id', 'track_name'))
+
+songDT2[genre %like% "country"][order(popularity, ratio, decreasing = T)][,.(track_name, artist_1, word)][1:10]
+songDT2[genre %like% "jazz"][order(popularity, ratio, decreasing = T)][,.(track_name, artist_1, word)][1:10]
+songDT2[genre %like% "rock"][order(popularity, ratio, decreasing = T)][,.(track_name, artist_1, word)][1:10]
+
+# songDT[genre %like% "country" & !(genre %like% "jazz") & !(genre %like% "rock"), genre2:="country"]
+# songDT[genre %like% "jazz" & !(genre %like% "country") , genre2:="jazz"]
+# songDT[genre %like% "rock" & !(genre %like% "country"), genre2:="jazz"]
+
+```
+
