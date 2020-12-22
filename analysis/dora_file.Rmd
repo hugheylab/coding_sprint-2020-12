@@ -50,11 +50,11 @@ head(getLyricWordCount(songDT, c('merry', 'holidays')), 15)
 We can merge the tables and then figure out which words are the most "danceable" based on a column that comes from spotify.
 
 ```{r analyze dance words}
-songDT = merge(songDT, lyricDT, by = c('track_id', 'track_name'))
-songDT = songDT[, word_danceability := ((count / word_total) * danceability)]
-setorder(songDT, -word_danceability)
+songLyricDT = merge(songDT, lyricDT, by = c('track_id', 'track_name'))
+songLyricDT = songLyricDT[, word_danceability := ((count / word_total) * danceability)]
+setorder(songLyricDT, -word_danceability)
 cols = c('track_name', 'danceability', 'word_total', 'word', 'count', 'word_danceability')
-head(songDT[, ..cols], 20)
+head(songLyricDT[, ..cols], 20)
 ```
 
 ## Sample analysis of song key frequencies
@@ -79,3 +79,36 @@ ggplot(data = songDT[genre %like% 'pop']) +
   xlab('Key')
   
 ```
+
+
+ Which genres have the most danceability
+```{r}
+
+```
+
+```{r}
+songDT[genre %like% "pop|contemporary|dance", Class := "pop"]
+songDT[genre %like% "jazz|lounge|adult", Class := "jazz"]
+songDT[genre %like% "rock", Class := "rock"]
+songCountByClass = songDT[, .N, by = Class]
+head(songCountByClass)
+```
+
+
+```{r}
+ggplot(songDT, aes(y = danceability, x = Class)) + geom_boxplot()
+
+```
+
+Does danceability relate to energy?
+```{r}
+ggplot(songDT, aes(x = danceability, y = energy)) + geom_point() + facet_wrap(~ Class)
+
+```
+
+```{r}
+ggplot(songDT, aes(x = danceability, y = loudness)) + geom_point() + facet_wrap(~ Class)
+
+```
+
+
