@@ -26,6 +26,9 @@ Load data example here.
 ```{r load libraries}
 library(data.table)
 library(ggplot2)
+library(ggbeeswarm)
+library(stringr)
+library(viridis)
 ```
 
 
@@ -34,48 +37,70 @@ songDT = fread('data/song_data.csv.gz')
 head(songDT, 5)
 ```
 
-## Use word count function
-
-Pass in the data.table to the function and it will return back a data table with each song name, id, word, and count. You can also pass a list of words to exclude `wordExclude` that will exclude those words from the list.
-
-```{r use word count}
-source('code/get_lyric_word_count.R')
-lyricDT = getLyricWordCount(songDT)
-head(lyricDT, 15)
-head(getLyricWordCount(songDT, c('merry', 'holidays')), 15)
+```{r energy by ! and oh}
+songDT[, '"!"' := str_count(lyrics, '!')]
+songDT[, '"Oh"' := str_count(lyrics, 'oh')]
+songDT[, '"God"' := str_count(lyrics, 'God')]
+songMelt = melt(songDT, measure.vars = c('"!"', '"Oh"', '"God"'))
+energyByWord = ggplot(data = songMelt, mapping = aes(
+  x = value,
+  y = energy,
+  color = tempo
+)) + 
+  geom_quasirandom() +
+  facet_wrap(~variable, nrow = 3) +
+  theme_classic() +
+  labs(
+    x = 'Word Frequency',
+    y = 'Energy Level\n(Meaningful Units)',
+    color = 'Tempo',
+    title = 'Song Energy by Particular Word Frequency'
+  ) +
+  scale_color_viridis()
+energyByWord
 ```
+<!-- ## Use word count function -->
 
-## Sample analyses of danceable words
+<!-- Pass in the data.table to the function and it will return back a data table with each song name, id, word, and count. You can also pass a list of words to exclude `wordExclude` that will exclude those words from the list. -->
 
-We can merge the tables and then figure out which words are the most "danceable" based on a column that comes from spotify.
+<!-- ```{r use word count} -->
+<!-- source('code/get_lyric_word_count.R') -->
+<!-- lyricDT = getLyricWordCount(songDT) -->
+<!-- head(lyricDT, 15) -->
+<!-- head(getLyricWordCount(songDT, c('merry', 'holidays')), 15) -->
+<!-- ``` -->
 
-```{r analyze dance words}
-songDT = merge(songDT, lyricDT, by = c('track_id', 'track_name'))
-songDT = songDT[, word_danceability := ((count / word_total) * danceability)]
-setorder(songDT, -word_danceability)
-cols = c('track_name', 'danceability', 'word_total', 'word', 'count', 'word_danceability')
-head(songDT[, ..cols], 20)
-```
+<!-- ## Sample analyses of danceable words -->
 
-## Sample analysis of song key frequencies
+<!-- We can merge the tables and then figure out which words are the most "danceable" based on a column that comes from spotify. -->
 
-The plot below shows the frequencies of the keys represented in pop songs from Spotify's 'Christmas Hits' playlist.
+<!-- ```{r analyze dance words} -->
+<!-- songDT = merge(songDT, lyricDT, by = c('track_id', 'track_name')) -->
+<!-- songDT = songDT[, word_danceability := ((count / word_total) * danceability)] -->
+<!-- setorder(songDT, -word_danceability) -->
+<!-- cols = c('track_name', 'danceability', 'word_total', 'word', 'count', 'word_danceability') -->
+<!-- head(songDT[, ..cols], 20) -->
+<!-- ``` -->
 
-```{r}
+<!-- ## Sample analysis of song key frequencies -->
 
-songDT = fread('data/song_data.csv.gz')
+<!-- The plot below shows the frequencies of the keys represented in pop songs from Spotify's 'Christmas Hits' playlist. -->
 
-theme_set(theme_bw())
+<!-- ```{r} -->
 
-#labeller to convert binary mode to major/minor
-modeLabels = c('Minor', 'Major')
-names(modeLabels) = c(0, 1)
+<!-- songDT = fread('data/song_data.csv.gz') -->
 
-ggplot(data = songDT[genre %like% 'pop']) +
-  geom_bar(aes(x = as.factor(key))) +
-  facet_grid(~mode, labeller =  as_labeller(modeLabels)) +
-  
-  ggtitle('Frequencies of pop song keys') +
-  xlab('Key')
-  
-```
+<!-- theme_set(theme_bw()) -->
+
+<!-- #labeller to convert binary mode to major/minor -->
+<!-- modeLabels = c('Minor', 'Major') -->
+<!-- names(modeLabels) = c(0, 1) -->
+
+<!-- ggplot(data = songDT[genre %like% 'pop']) + -->
+<!--   geom_bar(aes(x = as.factor(key))) + -->
+<!--   facet_grid(~mode, labeller =  as_labeller(modeLabels)) + -->
+
+<!--   ggtitle('Frequencies of pop song keys') + -->
+<!--   xlab('Key') -->
+
+<!-- ``` -->
