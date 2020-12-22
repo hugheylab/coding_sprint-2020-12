@@ -1,0 +1,81 @@
+---
+title: "Sample Analysis"
+author: "jschoenbachler & eoutland"
+date: "2020-12-22"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
+```
+
+## Introduction
+
+All data files are located within the `data` folder. The data consist of song titles,
+artist names, audio features (e.g., key, 'instrumentalness', 'danceability'), 
+and lyrics taken from Spotify's 'Christmas Hits' playlist.
+
+Descriptions of audio features can be found [here](https://developer.spotify.com/documentation/web-api/reference/tracks/get-several-audio-features/).
+The `key` column has already been translated from integer to seven-letter pitch notation.
+
+## Load data
+
+Load data example here.
+
+```{r load libraries}
+library(data.table)
+library(ggplot2)
+```
+
+
+```{r load all data}
+songDT = fread('data/song_data.csv.gz')
+head(songDT, 5)
+```
+
+## Use word count function
+
+Pass in the data.table to the function and it will return back a data table with each song name, id, word, and count. You can also pass a list of words to exclude `wordExclude` that will exclude those words from the list.
+
+```{r use word count}
+source('code/get_lyric_word_count.R')
+lyricDT = getLyricWordCount(songDT)
+head(lyricDT, 15)
+head(getLyricWordCount(songDT, c('merry', 'holidays')), 15)
+```
+
+## Sample analyses of danceable words
+
+We can merge the tables and then figure out which words are the most "danceable" based on a column that comes from spotify.
+
+```{r analyze dance words}
+songDT = merge(songDT, lyricDT, by = c('track_id', 'track_name'))
+songDT = songDT[, word_danceability := ((count / word_total) * danceability)]
+setorder(songDT, -word_danceability)
+cols = c('track_name', 'danceability', 'word_total', 'word', 'count', 'word_danceability')
+head(songDT[, ..cols], 20)
+```
+
+## Sample analysis of song key frequencies
+
+The plot below shows the frequencies of the keys represented in pop songs from Spotify's 'Christmas Hits' playlist.
+
+```{r}
+
+songDT = fread('data/song_data.csv.gz')
+
+theme_set(theme_bw())
+
+#labeller to convert binary mode to major/minor
+modeLabels = c('Minor', 'Major')
+names(modeLabels) = c(0, 1)
+
+ggplot(data = songDT[genre %like% 'pop']) +
+  geom_bar(aes(x = as.factor(key))) +
+  facet_grid(~mode, labeller =  as_labeller(modeLabels)) +
+  
+  ggtitle('Frequencies of pop song keys') +
+  xlab('Key')
+  
+```
