@@ -27,8 +27,6 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -39,15 +37,6 @@ div.section {
   padding-top: 12px;
 }
 </style>
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -448,7 +437,7 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 </div>
 <div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown is untracked by Git. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
+<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
 </div>
 </div>
 </div>
@@ -472,7 +461,7 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 </div>
 <div id="strongSeedstrongcodesetseed20200710code" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The command <code>set.seed(20200710)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+<p>The command <code>set.seed(20200710)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
 </div>
 </div>
 </div>
@@ -515,32 +504,26 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012treeb106ab62787360535af0acb58509622e53358a37targetblankb106ab6a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/b106ab62787360535af0acb58509622e53358a37" target="_blank">b106ab6</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree008df1b77d0cc85de6413ec0691b42a385d148d8targetblank008df1ba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/008df1b77d0cc85de6413ec0691b42a385d148d8" target="_blank">008df1b</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012treeb106ab62787360535af0acb58509622e53358a37targetblankb106ab6a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomhugheylabcodingsprint202012tree008df1b77d0cc85de6413ec0691b42a385d148d8targetblank008df1ba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/b106ab62787360535af0acb58509622e53358a37" target="_blank">b106ab6</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/hugheylab/coding_sprint-2020-12/tree/008df1b77d0cc85de6413ec0691b42a385d148d8" target="_blank">008df1b</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
 Ignored files:
-    Ignored:    .Rhistory
     Ignored:    .Rproj.user/
 
-Untracked files:
-    Untracked:  analysis/dora_file.Rmd
-    Untracked:  analysis/elliot_file.Rmd
-    Untracked:  analysis/jake_file.Rmd
-    Untracked:  analysis/josh_file.Rmd
-    Untracked:  analysis/layla_file.Rmd
-    Untracked:  analysis/michael_file.Rmd
+Unstaged changes:
+    Modified:   analysis/michael_file.Rmd
 
 </code></pre>
 <p>
@@ -553,9 +536,69 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <hr>
 </div>
 <div id="versions" class="tab-pane fade">
+
 <p>
-There are no past versions. Publish this analysis with <code>wflow_publish()</code> to start tracking its development.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/michael_file.Rmd</code>) and HTML (<code>docs/michael_file.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/hugheylab/coding_sprint-2020-12/blob/008df1b77d0cc85de6413ec0691b42a385d148d8/analysis/michael_file.Rmd" target="_blank">008df1b</a>
+</td>
+<td>
+Josh Schoenbachler
+</td>
+<td>
+2020-12-22
+</td>
+<td>
+Add copy of sample analyses and build
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/hugheylab/coding_sprint-2020-12/008df1b77d0cc85de6413ec0691b42a385d148d8/docs/michael_file.html" target="_blank">008df1b</a>
+</td>
+<td>
+Josh Schoenbachler
+</td>
+<td>
+2020-12-22
+</td>
+<td>
+Add copy of sample analyses and build
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 </div>
 </div>
@@ -569,7 +612,10 @@ There are no past versions. Publish this analysis with <code>wflow_publish()</co
 <h2>Load data</h2>
 <p>Load data example here.</p>
 <pre class="r"><code>library(data.table)
-library(ggplot2)</code></pre>
+library(ggplot2)
+library(ggbeeswarm)
+library(stringr)
+library(viridis)</code></pre>
 <pre class="r"><code>songDT = fread(&#39;data/song_data.csv.gz&#39;)
 head(songDT, 5)</code></pre>
 <pre><code>                 track_id                               track_name popularity
@@ -604,152 +650,61 @@ head(songDT, 5)</code></pre>
 5:                0    0.284   0.777  95.989      170933              4
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               lyrics
 1: \n          \n            \n            [Intro: Justin, All &amp; JC]\nOooh-ooh\nMerry Christmas\nHappy holidaysMerry Christmas (oh yeah, hey)Merry Christmas (Merry Christmas)Merry Christmas\nHappy holidays (ooh-yeah!)\n[Verse 1: JC]\nWe&#39;ve been waiting\nAll year for this night\nAnd the snow is glistening\nOn the trees outside\nAnd all the stockings\nAre hung by the fireside\nWaiting for Santa to arrive\n[Pre-Chorus: JC]\nAnd all the love will show\n&#39;Cause everybody knows\nIt&#39;s Christmas time\nAnd all the kids will see\nThe gifts under the tree\nIt&#39;s the best time of year\nFor the family\n[Chorus: All &amp; JC]\nIt&#39;s a wonderful feeling (hey yeah)\nFeel the love in the room\nFrom the floor to the ceiling\nIt&#39;s that time of year\nChristmas time is here\nAnd with the blessings from above\nGod sends you his love\nAnd everything&#39;s okay\nMerry Christmas, happy holidays (oh yeah)\nMerry Christmas (oh-oh-oh)\nMerry Christmas\nHappy holidays (ooh-yeah)\n[Verse 2: Justin &amp; All]\nOh-oh!\nBells are ringing\nIt&#39;s time to scream and shout(Scream and shout!)\nAnd everybody playing\n&#39;Cause school&#39;s out\nCelebrating the special times we share\nHappiness &#39;cause love is in the air\n[Pre-Chorus: Justin]\nAnd all the love will show\n&#39;Cause everybody knows\nIt&#39;s Christmas time\nAnd all the kids will see\nThe gifts under the tree\nIt&#39;s the best time of year\nFor the family\n[Chorus: All &amp; Justin]\nIt&#39;s a wonderful feeling (wonderful feeling)\nFeel the love in the room\nFrom the floor to the ceiling (oh yeah, hey)\nIt&#39;s that time of year (that time of year)\nChristmas time is here (oh yeah)\nAnd with the blessings from above\nGod sends you his love\nAnd everything&#39;s okay\nMerry Christmas, happy holidays\nMerry Christmas (Merry Christmas)\nMerry Christmas\nHappy holidays (ooh-ooh)\nMerry Christmas (oh yeah)\nMerry Christmas\nHappy holidays\n[Bridge: JC &amp; All]\nNo matter what your holiday\nIt&#39;s a time to celebrate\nAnd put your worries aside(Worries aside)\nAnd open up your mind(Open up your mind)\nSee the world right by your side\nIt&#39;s Christmas time!\n[Interlude: All, Justin &amp; JC]\nMerry Christmas\nMerry Christmas (Merry Christmas)\nHappy holidays(Sing it, everybody!)\nMerry Christmas (come on, now!)\nMerry Christmas (let me hear ya)\nMerry Christmas\nHappy holidays\n[Chorus: All, JC &amp; Justin]\nIt&#39;s a wonderful feeling\nFeel the love in the room\nFrom the floor to the ceiling (oh yeah)\nIt&#39;s that time of year (that time of year)\nChristmas time is here (ooh-yeah)\nAnd with the blessings from above (oh-oh-oh)\nGod sends you his love (oh yeah)\nAnd everything&#39;s okay (yeah, yeah, hey!)\nMerry Christmas, happy holidays(Come on, now!)\nMerry Christmas(Let me hear ya)\nMerry Christmas\nHappy holidays\nMerry Christmas(Merry Christmas)\nMerry Christmas(Oh yeah, yeah)\nMerry Christmas(Yeah, yeah)\nHappy holidays\nMerry Christmas\nMerry Christmas\nHappy holidays\n\n\n            \n          \n        
-2:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \n          \n            \n            [Verse 1: Ella Henderson]\nSo glad you showed up to this party\n&#39;Cause I was &#39;bout to leave for sure\nAin&#39;t no fun dancin&#39; with nobody\nWhen it&#39;s December 24th\n[Pre-Chorus: Ella Henderson]\nYou gave me a drink and\nNow it&#39;s got me thinkin&#39;\nSomething&#39;s in the air tonight\n[Chorus: Ella Henderson &amp; AJ Mitchell]\nOh, you melt me when you get this close\nLike the snowflakes on your winter coat\nBaby, kiss me, or we&#39;ll never know\nWe can blame it on the mistletoe\nIt&#39;s gettin&#39; late but we don&#39;t wanna go\nAnd Mariah&#39;s on the radio\nSo baby, kiss me, or we&#39;ll never know\nWe can blame it on thе mistletoe\n[Verse 2: AJ Mitchell]\nNow I know what I want for Christmas\nJust a moment on your lips, yеah, ayy (Hmm, hmm)\nSo Santa if you&#39;re really listenin&#39;\nI wanna add a present to my list\n[Pre-Chorus: AJ Mitchell]\nChristmas stars are twinklin&#39;, oh, it&#39;s got me thinkin&#39;\nSomething&#39;s in the air tonight\n[Chorus: Ella Henderson &amp; AJ Mitchell]\nOh, you melt me when you get this close\nLike the snowflakes on your winter coat\nBaby, kiss me, or we&#39;ll never know\nWe can blame it on the mistletoe\nIt&#39;s gettin&#39; late but we don&#39;t wanna go\nAnd Mariah&#39;s on the radio (Radio)\nSo baby, kiss me, or we&#39;ll never know\nWe can blame it on the mistletoe\n[Bridge: AJ Mitchell &amp; Ella Henderson]\nAll the blessings come right out of the blueYou&#39;re the best thing to turn up, baby, it&#39;s you, ooh, ooh, ooh\n[Chorus: Ella Henderson &amp; AJ Mitchell, AJ Mitchell]\nOh, you melt me when you get this close (This close)\nLike the snowflakes on your winter coat (On your winter coat, woah-oh, woah-oh)\nBaby, kiss me, or we&#39;ll never know (Never know)\nWe can blame it on the mistletoe (Blame it on the mistletoe)\nIt&#39;s gettin&#39; late but we don&#39;t wanna go (Don&#39;t wanna go)\nAnd Mariah&#39;s on the radio (Ooh, ooh-ooh)\nSo baby, kiss me, or we&#39;ll never know\nWe can blame it on the mistletoe (The mistletoe)\n[Outro: Ella Henderson &amp; AJ Mitchell]\nSo baby, kiss me, or we&#39;ll never knowWe can blame it on the mistletoe\n\n\n            \n          \n        
+2:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \n          \n            \n            [Verse 1: Ella Henderson]\nSo glad you showed up to this party\n&#39;Cause I was &#39;bout to leave for sure\nAin&#39;t no fun dancin&#39; with nobody\nWhen it&#39;s December 24th\n[Pre-Chorus: Ella Henderson]\nYou gave me a drink and\nNow it&#39;s got me thinkin&#39;\nSomething&#39;s in the air tonight\n[Chorus: Ella Henderson &amp; AJ Mitchell]\nOh, you melt me when you get this close\nLike the snowflakes on your winter coat\nBaby, kiss me, or we&#39;ll never know\nWe can blame it on the mistletoe\nIt&#39;s gettin&#39; late but we don&#39;t wanna go\nAnd Mariah&#39;s on the radio\nSo baby, kiss me, or we&#39;ll never know\nWe can blame it on thÐµ mistletoe\n[Verse 2: AJ Mitchell]\nNow I know what I want for Christmas\nJust a moment on your lips, yÐµah, ayy (Hmm, hmm)\nSo Santa if you&#39;re really listenin&#39;\nI wanna add a present to my list\n[Pre-Chorus: AJ Mitchell]\nChristmas stars are twinklin&#39;, oh, it&#39;s got me thinkin&#39;\nSomething&#39;s in the air tonight\n[Chorus: Ella Henderson &amp; AJ Mitchell]\nOh, you melt me when you get this close\nLike the snowflakes on your winter coat\nBaby, kiss me, or we&#39;ll never know\nWe can blame it on the mistletoe\nIt&#39;s gettin&#39; late but we don&#39;t wanna go\nAnd Mariah&#39;s on the radio (Radio)\nSo baby, kiss me, or we&#39;ll never know\nWe can blame it on the mistletoe\n[Bridge: AJ Mitchell &amp; Ella Henderson]\nAll the blessings come right out of the blueYou&#39;re the best thing to turn up, baby, it&#39;s you, ooh, ooh, ooh\n[Chorus: Ella Henderson &amp; AJ Mitchell, AJ Mitchell]\nOh, you melt me when you get this close (This close)\nLike the snowflakes on your winter coat (On your winter coat, woah-oh, woah-oh)\nBaby, kiss me, or we&#39;ll never know (Never know)\nWe can blame it on the mistletoe (Blame it on the mistletoe)\nIt&#39;s gettin&#39; late but we don&#39;t wanna go (Don&#39;t wanna go)\nAnd Mariah&#39;s on the radio (Ooh, ooh-ooh)\nSo baby, kiss me, or we&#39;ll never know\nWe can blame it on the mistletoe (The mistletoe)\n[Outro: Ella Henderson &amp; AJ Mitchell]\nSo baby, kiss me, or we&#39;ll never knowWe can blame it on the mistletoe\n\n\n            \n          \n        
 3:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \n          \n            \n            [Chorus]\nIt&#39;s the most wonderful time of the year\nWith the kids jingle belling\nAnd everyone telling you &quot;&quot;be of good cheer&quot;&quot;\nIt&#39;s the most wonderful time of the year\n[Verse 1]\nIt&#39;s the hap-happiest season of all\nWith those holiday greetings\nAnd gay happy meetings when friends come to call\nIt&#39;s the hap-happiest season of all\n[Pre-Chorus]\nThere&#39;ll be parties for hosting\nMarshmallows for toasting\nAnd caroling out in the snowThere&#39;ll be scary ghost stories\nAnd tales of the glories\nOf Christmases long, long ago\n[Chorus]\nIt&#39;s the most wonderful time of the year\nThere&#39;ll be much mistletoeing\nAnd hearts will be glowing when loved ones are near\nIt&#39;s the most wonderful time of the year\n[Pre-Chorus]\nThere&#39;ll be parties for hosting\nMarshmallows for toasting\nAnd caroling out in the snow\nThere&#39;ll be scary ghost stories\nAnd tales of the glories\nOf Christmases long, long ago\n[Chorus]\nIt&#39;s the most wonderful time of the year\nThere&#39;ll be much mistletoeing\nAnd hearts will be glowing when loved ones are near\nIt&#39;s the most wonderful time\nIt&#39;s the most wonderful time\nIt&#39;s the most wonderful time\nIt&#39;s the most wonderful time of the year\n\n\n            \n          \n        
 4:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \n          \n            \n            [Verse 1]\nI hate that I remember\nI wish I could forget what you did last December\nYou left my heart a mess\nBoy, you blew it\nHow could you do it, do it?\nOh, yeah (It&#39;s The Rascals!)\n[Chorus]Last Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\nLast Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\n[Verse 2]\nThought we belong together\nAt least that&#39;s what you said\nI should have known better\nYou broke my heart again\nBoy, you blew it\nHow could you do it, do it?\nOh, yeah\n[Chorus]Last Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\nLast Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\n[Bridge]\nHow could you leave Christmas morning?\nYou broke my heart with no warning\nBoy, you blew it\nHow could you do it, do it?\nOh, yeah\n[Chorus]Last Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\nLast Christmas, I gave you my heart\nBut the very next day you gave it away\nThis year to save me from tears, I&#39;ll give it to someone special\n[Outro]\nThis is our last, last Christmas\nYou broke my heart\nLast, last Christmas\nYou broke my heart\nThis year to save me from tears, I&#39;ll give it to someone special\nI hate that I remember\nI wish I could forget what you did last December\nYou left my heart a mess\nYou blew it\nYou do it, do it?\n\n\n            \n          \n        
 5:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \n          \n            \n            [Verse 1: Ariana Grande]\nSanta baby, slip a Sable under the tree for me (mmhmm)\nI&#39;ve been an awful good girl\nSanta baby, so hurry down the chimney tonight\n[Verse 2: Liz Gillies]\nSanta baby, a &#39;54 convertible too, light blue\nI&#39;ll wait up for you dear\nSanta baby, and hurry down the chimney tonight\n[Chorus: Ariana Grande + Liz Gillies]\nThink of all the fun I&#39;ve missed\nThink of all the fellas that I haven&#39;t kissed *kiss*Next year I could be just as good\nIf you check off my Christmas list\n[Verse 3: Ariana Grande + Liz Gillies]\nSanta baby, I want a yacht and really that&#39;s not a lie\nI&#39;ve been an angel all year\nSanta baby, so hurry down the chimney tonight\n[Verse 4: Ariana Grande]\nSanta honey, the one little thing I really need\nThe deed to a platinum mine\nSanta honey, so hurry down the chimney tonight\n[Chorus: Liz Gillies + Ariana Grande]\nCome and trim my Christmas tree\nWith some decorations bought at Tiffany&#39;sI really do believe in you\nLet&#39;s see if you believe in me\n[Bridge: Ariana Grande + Liz Gillies]\nSanta baby, forgot to mention one little thing, a ring\nAnd I don&#39;t mean on the phoneSanta baby, and hurry down the chimney tonight\nSo hurry down the chimney tonight\n[Outro: Ariana Grande + Liz Gillies]\nWaitingHurry, tonight\nHurry down the chimney tonight\n\n\n            \n          \n        </code></pre>
-</div>
-<div id="use-word-count-function" class="section level2">
-<h2>Use word count function</h2>
-<p>Pass in the data.table to the function and it will return back a data table with each song name, id, word, and count. You can also pass a list of words to exclude <code>wordExclude</code> that will exclude those words from the list.</p>
-<pre class="r"><code>source(&#39;code/get_lyric_word_count.R&#39;)
-lyricDT = getLyricWordCount(songDT)
-head(lyricDT, 15)</code></pre>
-<pre><code>                         track_name               track_id          word
- 1: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          oooh
- 2: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           ooh
- 3: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0         merry
- 4: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0     christmas
- 5: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0         happy
- 6: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0 holidaysmerry
- 7: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0            oh
- 8: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          yeah
- 9: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           hey
-10: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0      holidays
-11: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          weve
-12: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          been
-13: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0       waiting
-14: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           all
-15: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          year
-    word_total count
- 1:        433     1
- 2:        433     6
- 3:        433    28
- 4:        433    35
- 5:        433    13
- 6:        433     1
- 7:        433    16
- 8:        433    17
- 9:        433     4
-10:        433    12
-11:        433     1
-12:        433     1
-13:        433     2
-14:        433     6
-15:        433     8</code></pre>
-<pre class="r"><code>head(getLyricWordCount(songDT, c(&#39;merry&#39;, &#39;holidays&#39;)), 15)</code></pre>
-<pre><code>                         track_name               track_id          word
- 1: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          oooh
- 2: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           ooh
- 3: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0     christmas
- 4: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0         happy
- 5: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0 holidaysmerry
- 6: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0            oh
- 7: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          yeah
- 8: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           hey
- 9: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          weve
-10: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          been
-11: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0       waiting
-12: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           all
-13: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          year
-14: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0           for
-15: Merry Christmas, Happy Holidays 5SyQ5OhqrkJGb35V7RBoL0          this
-    word_total count
- 1:        393     1
- 2:        393     6
- 3:        393    35
- 4:        393    13
- 5:        393     1
- 6:        393    16
- 7:        393    17
- 8:        393     4
- 9:        393     1
-10:        393     1
-11:        393     2
-12:        393     6
-13:        393     8
-14:        393     4
-15:        393     1</code></pre>
-</div>
-<div id="sample-analyses-of-danceable-words" class="section level2">
-<h2>Sample analyses of danceable words</h2>
-<p>We can merge the tables and then figure out which words are the most “danceable” based on a column that comes from spotify.</p>
-<pre class="r"><code>songDT = merge(songDT, lyricDT, by = c(&#39;track_id&#39;, &#39;track_name&#39;))
-songDT = songDT[, word_danceability := ((count / word_total) * danceability)]
-setorder(songDT, -word_danceability)
-cols = c(&#39;track_name&#39;, &#39;danceability&#39;, &#39;word_total&#39;, &#39;word&#39;, &#39;count&#39;, &#39;word_danceability&#39;)
-head(songDT[, ..cols], 20)</code></pre>
-<pre><code>                                               track_name danceability
- 1:                                    Little Drummer Boy        0.564
- 2:                                      Jingle Bell Rock        0.706
- 3:                                      Jingle Bell Rock        0.709
- 4:                                           Sleigh Ride        0.529
- 5:                                      Jingle Bell Rock        0.706
- 6:              A Holly Jolly Christmas - Single Version        0.672
- 7:                                           Sleigh Ride        0.529
- 8:                   Holidays (feat. Earth, Wind &amp; Fire)        0.700
- 9:                     Christmas (Baby Please Come Home)        0.561
-10:                                 Cozy Little Christmas        0.774
-11:                                      Jingle Bell Rock        0.709
-12: Wonderful Christmastime (Edited Version) [Remastered]        0.774
-13:                                             Mistletoe        0.666
-14:                                    Little Drummer Boy        0.564
-15: Wonderful Christmastime (Edited Version) [Remastered]        0.774
-16: Wonderful Christmastime (Edited Version) [Remastered]        0.774
-17:                         Santa Claus Is Coming to Town        0.594
-18:                                        One More Sleep        0.638
-19: Wonderful Christmastime (Edited Version) [Remastered]        0.774
-20: Wonderful Christmastime (Edited Version) [Remastered]        0.774
-    word_total      word count word_danceability
- 1:        183       pum    63        0.19416393
- 2:        205    jingle    35        0.12053659
- 3:        189    jingle    26        0.09753439
- 4:        309         a    56        0.09587055
- 5:        205      bell    27        0.09298537
- 6:        200      ding    26        0.08736000
- 7:        309      ding    48        0.08217476
- 8:        294   holiday    34        0.08095238
- 9:        193 christmas    26        0.07557513
-10:        364        la    34        0.07229670
-11:        189      bell    19        0.07127513
-12:        224      time    19        0.06565179
-13:        329       the    32        0.06477812
-14:        183       rum    21        0.06472131
-15:        224         a    18        0.06219643
-16:        224 christmas    18        0.06219643
-17:        177       you    18        0.06040678
-18:        387      more    36        0.05934884
-19:        224    simply    17        0.05874107
-20:        224    having    17        0.05874107</code></pre>
-</div>
-<div id="sample-analysis-of-song-key-frequencies" class="section level2">
-<h2>Sample analysis of song key frequencies</h2>
-<p>The plot below shows the frequencies of the keys represented in pop songs from Spotify’s ‘Christmas Hits’ playlist.</p>
-<pre class="r"><code>songDT = fread(&#39;data/song_data.csv.gz&#39;)
-
-theme_set(theme_bw())
-
-#labeller to convert binary mode to major/minor
-modeLabels = c(&#39;Minor&#39;, &#39;Major&#39;)
-names(modeLabels) = c(0, 1)
-
-ggplot(data = songDT[genre %like% &#39;pop&#39;]) +
-  geom_bar(aes(x = as.factor(key))) +
-  facet_grid(~mode, labeller =  as_labeller(modeLabels)) +
-  
-  ggtitle(&#39;Frequencies of pop song keys&#39;) +
-  xlab(&#39;Key&#39;)</code></pre>
-<p><img src="figure/michael_file.Rmd/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>songDT[, &#39;&quot;!&quot;&#39; := str_count(lyrics, &#39;!&#39;)]
+songDT[, &#39;&quot;Oh&quot;&#39; := str_count(lyrics, &#39;oh&#39;)]
+songDT[, &#39;&quot;God&quot;&#39; := str_count(lyrics, &#39;God&#39;)]
+songMelt = melt(songDT, measure.vars = c(&#39;&quot;!&quot;&#39;, &#39;&quot;Oh&quot;&#39;, &#39;&quot;God&quot;&#39;))
+energyByWord = ggplot(data = songMelt, mapping = aes(
+  x = value,
+  y = energy,
+  color = tempo
+)) + 
+  geom_quasirandom() +
+  facet_wrap(~variable, nrow = 3) +
+  theme_classic() +
+  labs(
+    x = &#39;Word Frequency&#39;,
+    y = &#39;Energy Level\n(Meaningful Units)&#39;,
+    color = &#39;Tempo&#39;,
+    title = &#39;Song Energy by Particular Word Frequency&#39;
+  ) +
+  scale_color_viridis()
+energyByWord</code></pre>
+<p><img src="figure/michael_file.Rmd/energy%20by%20!%20and%20oh-1.png" width="672" style="display: block; margin: auto;" /> <!-- ## Use word count function --></p>
+<!-- Pass in the data.table to the function and it will return back a data table with each song name, id, word, and count. You can also pass a list of words to exclude `wordExclude` that will exclude those words from the list. -->
+<!-- ```{r use word count} -->
+<!-- source('code/get_lyric_word_count.R') -->
+<!-- lyricDT = getLyricWordCount(songDT) -->
+<!-- head(lyricDT, 15) -->
+<!-- head(getLyricWordCount(songDT, c('merry', 'holidays')), 15) -->
+<!-- ``` -->
+<!-- ## Sample analyses of danceable words -->
+<!-- We can merge the tables and then figure out which words are the most "danceable" based on a column that comes from spotify. -->
+<!-- ```{r analyze dance words} -->
+<!-- songDT = merge(songDT, lyricDT, by = c('track_id', 'track_name')) -->
+<!-- songDT = songDT[, word_danceability := ((count / word_total) * danceability)] -->
+<!-- setorder(songDT, -word_danceability) -->
+<!-- cols = c('track_name', 'danceability', 'word_total', 'word', 'count', 'word_danceability') -->
+<!-- head(songDT[, ..cols], 20) -->
+<!-- ``` -->
+<!-- ## Sample analysis of song key frequencies -->
+<!-- The plot below shows the frequencies of the keys represented in pop songs from Spotify's 'Christmas Hits' playlist. -->
+<!-- ```{r} -->
+<!-- songDT = fread('data/song_data.csv.gz') -->
+<!-- theme_set(theme_bw()) -->
+<!-- #labeller to convert binary mode to major/minor -->
+<!-- modeLabels = c('Minor', 'Major') -->
+<!-- names(modeLabels) = c(0, 1) -->
+<!-- ggplot(data = songDT[genre %like% 'pop']) + -->
+<!--   geom_bar(aes(x = as.factor(key))) + -->
+<!--   facet_grid(~mode, labeller =  as_labeller(modeLabels)) + -->
+<!--   ggtitle('Frequencies of pop song keys') + -->
+<!--   xlab('Key') -->
+<!-- ``` -->
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -759,37 +714,40 @@ ggplot(data = songDT[genre %like% &#39;pop&#39;]) +
 <div id="workflowr-sessioninfo" class="collapse">
 <pre class="r"><code>sessionInfo()</code></pre>
 <pre><code>R version 3.6.3 (2020-02-29)
-Platform: x86_64-apple-darwin15.6.0 (64-bit)
-Running under: macOS  10.16
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 18363)
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
 
 locale:
-[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+[1] LC_COLLATE=English_United States.1252 
+[2] LC_CTYPE=English_United States.1252   
+[3] LC_MONETARY=English_United States.1252
+[4] LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.1252    
 
 attached base packages:
-[1] parallel  stats     graphics  grDevices utils     datasets  methods  
-[8] base     
+[1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] doParallel_1.0.16 iterators_1.0.13  foreach_1.5.1     stringr_1.4.0    
-[5] ggplot2_3.3.2     data.table_1.13.2
+[1] viridis_0.5.1     viridisLite_0.3.0 stringr_1.4.0     ggbeeswarm_0.6.0 
+[5] ggplot2_3.3.2     data.table_1.13.0
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.5        pillar_1.4.6      compiler_3.6.3    later_1.1.0.1    
- [5] git2r_0.27.1      workflowr_1.6.2   R.methodsS3_1.8.1 R.utils_2.10.1   
- [9] tools_3.6.3       digest_0.6.27     evaluate_0.14     lifecycle_0.2.0  
-[13] tibble_3.0.4      gtable_0.3.0      pkgconfig_2.0.3   rlang_0.4.8      
-[17] rstudioapi_0.13   yaml_2.2.1        xfun_0.19         withr_2.3.0      
-[21] dplyr_1.0.2       knitr_1.30        generics_0.1.0    fs_1.5.0         
-[25] vctrs_0.3.5       rprojroot_2.0.2   grid_3.6.3        tidyselect_1.1.0 
-[29] glue_1.4.2        R6_2.5.0          rmarkdown_2.5     farver_2.0.3     
-[33] purrr_0.3.4       magrittr_2.0.1    codetools_0.2-18  scales_1.1.1     
-[37] promises_1.1.1    ellipsis_0.3.1    htmltools_0.5.0   colorspace_2.0-0 
-[41] httpuv_1.5.4      labeling_0.4.2    stringi_1.5.3     munsell_0.5.0    
-[45] crayon_1.3.4      R.oo_1.24.0      </code></pre>
+ [1] Rcpp_1.0.4        vipor_0.4.5       pillar_1.4.3      compiler_3.6.3   
+ [5] later_1.1.0.1     git2r_0.27.1      workflowr_1.6.2   R.methodsS3_1.8.1
+ [9] R.utils_2.10.1    tools_3.6.3       digest_0.6.25     evaluate_0.14    
+[13] lifecycle_0.2.0   tibble_3.0.0      gtable_0.3.0      pkgconfig_2.0.3  
+[17] rlang_0.4.7       cli_2.0.2         rstudioapi_0.11   yaml_2.2.1       
+[21] beeswarm_0.2.3    xfun_0.17         gridExtra_2.3     withr_2.1.2      
+[25] dplyr_1.0.2       knitr_1.30        generics_0.0.2    fs_1.5.0         
+[29] vctrs_0.3.4       tidyselect_1.1.0  rprojroot_1.3-2   grid_3.6.3       
+[33] glue_1.4.2        R6_2.4.1          fansi_0.4.1       rmarkdown_2.3    
+[37] farver_2.0.3      purrr_0.3.3       magrittr_1.5      whisker_0.4      
+[41] backports_1.1.10  scales_1.1.0      promises_1.1.1    ellipsis_0.3.0   
+[45] htmltools_0.4.0   assertthat_0.2.1  colorspace_1.4-1  httpuv_1.5.4     
+[49] labeling_0.3      stringi_1.4.6     munsell_0.5.0     crayon_1.3.4     
+[53] R.oo_1.24.0      </code></pre>
 </div>
 </div>
 
@@ -816,7 +774,7 @@ footer is added to webpages before the MathJax javascript. -->
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
